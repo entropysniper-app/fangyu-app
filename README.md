@@ -1,21 +1,25 @@
-# 方舆（Fangyu）产品主页与 App Store 审核页面
+# Fangyu — Product Homepage & App Store Review Pages
 
-本仓库托管 **方舆（Fangyu）**（Bundle ID: `com.entropysniper.fangyu`）的 GitHub Pages 产品主页及 App Store Connect 所需的全部合规静态页面。
+This repository hosts the GitHub Pages marketing site and App Store compliance pages for **Fangyu** (`com.entropysniper.fangyu`).
 
-## 页面与 App Store Connect URL 清单
+- **Default Language:** English (`en`)
+- **Supported Languages (7):** English (`en`), 简体中文 (`zh`), Deutsch (`de`), Português (`pt`), Español (`es`), 日本語 (`ja`), 한국어 (`ko`)
+- Pass `?lang=en|zh|de|pt|es|ja|ko` or use the top-right language picker to switch instantly across all pages.
 
-启用 GitHub Pages（`Settings → Pages → Source: Deploy from a branch → main / (root)`）后，对应访问地址如下：
+## App Store Connect URLs
 
-| App Store Connect 字段 | 访问地址（GitHub Pages） | 说明 |
+Enable GitHub Pages (`Settings → Pages → Source: Deploy from a branch → main / (root)`):
+
+| App Store Connect Field | URL | Notes |
 | --- | --- | --- |
-| **Marketing URL（营销网址）** | `https://entropysniper-app.github.io/fangyu-app/` | 中英双语产品主页、交互式体素沙盘、功能与 Apple 全生态介绍、定价与自动续订披露 |
-| **Support URL（技术支持网址）** | `https://entropysniper-app.github.io/fangyu-app/support.html`（亦支持 `/support/`） | 中英双语 FAQ、恢复购买与订阅管理指引、平台要求、开发者联系邮箱 |
-| **Privacy Policy URL（隐私政策网址）** | `https://entropysniper-app.github.io/fangyu-app/privacy.html`（亦支持 `/privacy/`） | 中英双语完整隐私政策，与 App 内置 `PrivacyInfo.xcprivacy` 严格一致 |
-| **Terms & Credits（使用条款与开源署名）** | `https://entropysniper-app.github.io/fangyu-app/terms.html`（亦支持 `/terms/`） | Apple Standard EULA、Guideline 3.1.2 订阅条款、非官方免责声明、Arnis Apache-2.0 NOTICE、地理数据与字体署名 |
+| **Marketing URL** | `https://entropysniper-app.github.io/fangyu-app/` | English-default 7-language homepage, interactive voxel diorama, Apple Universal App overview, pricing & Guideline 3.1.2 disclosure |
+| **Support URL** | `https://entropysniper-app.github.io/fangyu-app/support.html` (also `/support/`) | Support contact, platform requirements, Universal Purchase & Family Sharing restore guide, FAQ |
+| **Privacy Policy URL** | `https://entropysniper-app.github.io/fangyu-app/privacy.html` (also `/privacy/`) | Aligned 100% with `PrivacyInfo.xcprivacy` (zero tracking, no accounts, local-first) |
+| **Terms & Credits** | `https://entropysniper-app.github.io/fangyu-app/terms.html` (also `/terms/`) | Apple Standard EULA, auto-renewing subscription terms, non-affiliation disclaimer, Arnis Apache-2.0 NOTICE, data & SIL OFL 1.1 credits |
 
-## 联系我们
+## Contact
 
-- 支持邮箱：`entropysniper@gmail.com`
+- Support email: `entropysniper@gmail.com`
 
 ---
 

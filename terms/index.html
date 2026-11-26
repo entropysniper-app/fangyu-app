@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-Hans" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>方舆（Fangyu）使用条款、订阅说明与开源署名 · Terms &amp; Credits</title>
-  <meta name="description" content="方舆（Fangyu）使用条款（Apple 标准 EULA）、自动续期订阅条款、非官方免责声明、Arnis Apache-2.0 NOTICE、地理数据署名与字体开源许可。" />
+  <title>Fangyu Terms of Use, Subscriptions &amp; Credits</title>
+  <meta name="description" content="Fangyu Terms of Use (Apple Standard EULA), auto-renewing subscription terms, Mojang/Microsoft non-affiliation notice, Arnis Apache-2.0 NOTICE, geographic data attributions, and SIL OFL 1.1 font licenses." />
   <meta name="theme-color" content="#15181D" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -12,26 +12,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/fangyu.css" />
+  <script src="../assets/i18n-docs.js"></script>
   <script src="../assets/site.js"></script>
 </head>
-<body>
+<body data-page="terms">
 
   <header class="site-nav">
     <div class="wrap nav-inner">
       <a class="brand" href="../index.html">
-        <img class="brand-icon" src="../assets/app-icon-256.png" alt="方舆 Fangyu" width="34" height="34" />
-        <span class="brand-name">方舆</span>
-        <span class="brand-sub">Fangyu</span>
+        <img class="brand-icon" src="../assets/app-icon-256.png" alt="Fangyu" width="34" height="34" />
+        <span class="brand-name" data-t="brand.name">Fangyu</span>
+        <span class="brand-sub">v1.0</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="../index.html"><span data-i18n="zh">产品主页</span><span data-i18n="en">Home</span></a>
-        <a href="../support.html"><span data-i18n="zh">技术支持</span><span data-i18n="en">Support</span></a>
-        <a href="../privacy.html"><span data-i18n="zh">隐私政策</span><span data-i18n="en">Privacy</span></a>
-        <a href="../terms.html" class="is-active"><span data-i18n="zh">使用条款与署名</span><span data-i18n="en">Terms</span></a>
+        <a href="../index.html" data-t="nav.home">Home</a>
+        <a href="../support.html" data-t="nav.support">Support</a>
+        <a href="../privacy.html" data-t="nav.privacy">Privacy</a>
+        <a href="../terms.html" class="is-active" data-t="nav.terms">Terms &amp; Credits</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-set-lang="zh" class="is-on" aria-pressed="true">中文</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-select-wrap">
+        <select class="lang-select" data-lang-select aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="zh">简体中文</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
       </div>
     </div>
   </header>
@@ -39,16 +47,16 @@
   <section class="doc-hero">
     <div class="wrap-narrow">
       <span class="px-badge px-badge-gold">TERMS · EULA · OPEN SOURCE &amp; DATA CREDITS</span>
-      <h1>使用条款、订阅说明与开源署名 · Terms &amp; Credits</h1>
+      <h1 data-t="trm.h1">Terms of Use, Subscriptions &amp; Credits</h1>
       <div class="doc-meta">
         <span class="px-badge">Bundle ID: com.entropysniper.fangyu</span>
         <span class="px-badge">Apple Standard EULA</span>
-        <span class="px-badge">Updated: 2026-11</span>
+        <span class="px-badge" data-t="priv.updated">Last Updated: November 2026</span>
       </div>
       <div class="doc-jump">
-        <a class="px-btn px-btn-stone px-btn-sm" href="#eula">使用条款与订阅 / Terms &amp; IAP</a>
-        <a class="px-btn px-btn-gold px-btn-sm" href="#disclaimer">非官方声明 / Disclaimer</a>
-        <a class="px-btn px-btn-water px-btn-sm" href="#credits">开源与数据署名 / Credits</a>
+        <a class="px-btn px-btn-stone px-btn-sm" href="#eula" data-t="trm.j1">Terms &amp; IAP</a>
+        <a class="px-btn px-btn-gold px-btn-sm" href="#disclaimer" data-t="trm.j2">Disclaimer</a>
+        <a class="px-btn px-btn-water px-btn-sm" href="#credits" data-t="trm.j3">Open-Source &amp; Data Credits</a>
       </div>
     </div>
   </section>
@@ -56,41 +64,32 @@
   <main class="wrap-narrow doc-body">
     <!-- EULA & Subscription Terms -->
     <section class="px-panel doc-section" id="eula">
-      <h2>1. 最终用户许可协议与自动续期订阅条款 · EULA &amp; Subscription Terms</h2>
-      <p>方舆（Fangyu）通过 Apple App Store 分发，适用 Apple 官方《许可应用程序最终用户许可协议》（Standard EULA）：</p>
-      <p>Fangyu is licensed to you via the Apple App Store under Apple's Standard Licensed Application End User License Agreement (Standard EULA):</p>
+      <h2 data-t="trm.s1.h2">1. EULA &amp; Auto-Renewing Subscription Terms</h2>
+      <p data-t="trm.s1.p1">Fangyu is licensed to you via the Apple App Store under Apple's Standard Licensed Application End User License Agreement (Standard EULA):</p>
       <div>
-        <a class="px-btn px-btn-water px-btn-sm" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">查看 Apple Standard EULA ↗</a>
+        <a class="px-btn px-btn-water px-btn-sm" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener" data-t="trm.eula_btn">View Apple Standard EULA ↗</a>
       </div>
 
-      <h3>方舆 Pro 自动续期订阅条款（中文）</h3>
+      <h3 data-t="trm.sub.h3">Fangyu Pro Subscription &amp; Purchase Terms</h3>
       <ul class="doc-list">
-        <li><strong>订阅方案：</strong>方舆 Pro 提供按月订阅（<code>com.entropysniper.fangyu.pro.monthly</code>）、按年订阅（<code>com.entropysniper.fangyu.pro.yearly</code>）及一次性买断（<code>com.entropysniper.fangyu.pro.lifetime</code>）。所有方案解锁相同功能，并支持 Universal Purchase 与 Apple 家人共享。</li>
-        <li><strong>扣费与续订：</strong>确认购买时，费用将从您的 Apple 账户扣除。除非您在当前订阅周期结束前至少 24 小时关闭自动续期，否则订阅将按同一价格自动续订并在周期结束前 24 小时内扣费。</li>
-        <li><strong>管理与取消：</strong>您可随时在 <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store 账户订阅设置</a> 中管理或取消订阅。买断为一次性非消耗型购买，永久有效。</li>
-      </ul>
-
-      <h3>Fangyu Pro Auto-Renewing Subscription Terms (English)</h3>
-      <ul class="doc-list">
-        <li><strong>Available Plans:</strong> Fangyu Pro offers Monthly (<code>com.entropysniper.fangyu.pro.monthly</code>), Yearly (<code>com.entropysniper.fangyu.pro.yearly</code>), and Lifetime (<code>com.entropysniper.fangyu.pro.lifetime</code>, one-time purchase). All plans unlock identical features and support Apple Universal Purchase and Family Sharing.</li>
-        <li><strong>Billing &amp; Renewal:</strong> Payment is charged to your Apple Account at confirmation of purchase. Subscriptions automatically renew at the same price unless auto-renew is turned off at least 24 hours before the end of the current billing period. Your account is charged for renewal within 24 hours prior to the end of the current period.</li>
-        <li><strong>Management &amp; Cancellation:</strong> Manage or cancel subscriptions anytime in <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store Subscription Settings</a>. Lifetime is a one-time non-consumable purchase with permanent access.</li>
+        <li data-t-html="trm.sub.1"><strong>Available Plans:</strong> Fangyu Pro offers Monthly (<code>com.entropysniper.fangyu.pro.monthly</code>), Yearly (<code>com.entropysniper.fangyu.pro.yearly</code>), and Lifetime (<code>com.entropysniper.fangyu.pro.lifetime</code>, one-time purchase). All plans unlock identical features and support Apple Universal Purchase and Family Sharing.</li>
+        <li data-t-html="trm.sub.2"><strong>Billing &amp; Renewal:</strong> Payment is charged to your Apple Account at confirmation of purchase. Subscriptions automatically renew at the same price unless auto-renew is turned off at least 24 hours before the end of the current billing period. Your account is charged for renewal within 24 hours prior to the end of the current period.</li>
+        <li data-t-html="trm.sub.3"><strong>Management &amp; Cancellation:</strong> Manage or cancel subscriptions anytime in <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store Subscription Settings</a>. Lifetime is a one-time non-consumable purchase with permanent access.</li>
       </ul>
     </section>
 
     <!-- Non-Affiliation Disclaimer -->
     <section class="px-panel-gold doc-section" id="disclaimer">
-      <h2>2. 独立产品与商标免责声明 · Non-Affiliation Disclaimer</h2>
-      <p><strong>中文：</strong>方舆（Fangyu）是由独立开发者打造的地理体素创作应用。<strong>非 Minecraft 官方产品，未获 Mojang Synergies AB 或 Microsoft Corporation 认可、赞助或关联。</strong>所有提及的第三方软件、游戏格式（Minecraft、Hytale、WorldEdit、Blender 等）商标均归各自权利人所有。方舆内置的开源 Arnis 生成引擎以 Apache-2.0 协议使用，方舆为独立产品，不代表 Arnis 官方。</p>
-      <p><strong>English:</strong> Fangyu is an independent geographic voxel studio. <strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong> All third-party product names and trademarks (including Minecraft, Hytale, WorldEdit, Blender, and Unreal Engine) belong to their respective owners. Fangyu embeds the open-source Arnis engine under the Apache License 2.0 and is an independent product, not an official distribution of Arnis.</p>
+      <h2 data-t="trm.s2.h2">2. Independent Product &amp; Trademark Disclaimer</h2>
+      <p data-t-html="trm.s2.p">Fangyu is an independent geographic voxel studio. <strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong> All third-party product names and trademarks (including Minecraft, Hytale, WorldEdit, Blender, and Unreal Engine) belong to their respective owners. Fangyu embeds the open-source Arnis engine under the Apache License 2.0 and is an independent product, not an official distribution of Arnis.</p>
     </section>
 
     <!-- Open Source & Data Attributions -->
     <section class="px-panel doc-section" id="credits">
-      <h2>3. 开源组件、地理数据与字体署名 · Open-Source, Data &amp; Font Notices</h2>
+      <h2 data-t="trm.s3.h2">3. Open-Source, Geographic Data &amp; Font Notices</h2>
 
-      <h3>核心世界生成引擎 · World Generation Engine (Apache-2.0)</h3>
-      <p>方舆内置无界面构建的开源 <strong>Arnis</strong> 引擎（商店版已移除 LGPL 许可的 Luanti 映射模块），依 Apache License 2.0 保留其完整 NOTICE 声明如下：</p>
+      <h3 data-t="trm.eng.h3">World Generation Engine (Apache-2.0)</h3>
+      <p data-t-html="trm.eng.p">Fangyu embeds a headless build of the open-source <strong>Arnis</strong> engine (with the LGPL Luanti mapping module removed in App Store builds). In accordance with Section 4 of the Apache License 2.0, the original NOTICE file is preserved verbatim below:</p>
       <pre class="notice-pre">Arnis
 Copyright (c) 2022-2026 Louis Erbkamm (louis-e)
 
@@ -102,7 +101,7 @@ The only official sources for Arnis are:
   https://github.com/louis-e/arnis
   https://arnismc.com</pre>
 
-      <h3>地理与行星数据源 · Geographic &amp; Planetary Data Sources</h3>
+      <h3 data-t="trm.geo.h3">Geographic &amp; Planetary Data Sources</h3>
       <ul class="doc-list">
         <li><strong>OpenStreetMap:</strong> Map features and geocoding data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, licensed under the Open Database License (ODbL).</li>
         <li><strong>Overture Maps Foundation:</strong> Supplemental building footprints provided by Overture Maps Foundation (CDLA-Permissive-2.0 / ODbL).</li>
@@ -113,21 +112,21 @@ The only official sources for Arnis are:
         <li><strong>Public Airborne LiDAR:</strong> Optional open national/regional airborne LiDAR elevation datasets (US USGS 3DEP, France IGN, Germany NRW/Bavaria, Netherlands AHN, Switzerland swisstopo, etc.), each retaining its respective open-government attribution.</li>
       </ul>
 
-      <h3>随包字体许可 · Bundled Fonts (SIL Open Font License 1.1)</h3>
+      <h3 data-t="trm.fnt.h3">Bundled Fonts (SIL Open Font License 1.1)</h3>
       <ul class="doc-list">
         <li><strong>Fusion Pixel Font (12px proportional zh_hans):</strong> Copyright © 2022 TakWolf (including glyphs from Ark Pixel Font, Cubic 11, and Galmuri) — SIL OFL 1.1.</li>
         <li><strong>Pixelify Sans:</strong> Copyright 2021 The Pixelify Sans Project Authors — SIL OFL 1.1.</li>
-        <li><strong>ZCOOL QingKe HuangYou (站酷庆科黄油体):</strong> Copyright 2018 The ZCOOL QingKe HuangYou Project Authors — SIL OFL 1.1.</li>
+        <li><strong>ZCOOL QingKe HuangYou:</strong> Copyright 2018 The ZCOOL QingKe HuangYou Project Authors — SIL OFL 1.1.</li>
       </ul>
 
-      <h3>内置材质包 · Built-In Resource Packs</h3>
-      <p>方舆内置的原创建筑材质包与三套风格材质包（Promo Brick、Urban 64x PBR、Heritage 32x）均为原创或 <strong>CC0-1.0</strong> 公共领域授权，不含任何第三方游戏贴图或受版权保护的美术素材。</p>
+      <h3 data-t="trm.pack.h3">Built-In Resource Packs</h3>
+      <p data-t-html="trm.pack.p">Fangyu's built-in architectural texture set and three style packs (Promo Brick, Urban 64x PBR, Heritage 32x) are original or released under <strong>CC0-1.0</strong> public domain dedication, containing no third-party game textures or copyrighted game GUI art.</p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap-narrow footer-bottom">
-      <p><a href="../index.html">← 返回方舆主页 / Back to Fangyu Home</a> · <a href="../privacy.html">隐私政策 / Privacy Policy</a> · <a href="../support.html">技术支持 / Support</a></p>
+      <p><a href="../index.html" data-t="footer.back_home">← Back to Fangyu Home</a> · <a href="../privacy.html" data-t="nav.privacy">Privacy</a> · <a href="../support.html" data-t="nav.support">Support</a></p>
       <p>Contact: <a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a> · © 2026 Fangyu (<code>com.entropysniper.fangyu</code>)</p>
     </div>
   </footer>

@@ -47,9 +47,9 @@
   --red-wash: #2E1512;
 
   /* Typography */
-  --font-display: "ZCOOL QingKe HuangYou", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  --font-display: "Pixelify Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
   --font-num: "Pixelify Sans", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans", "Apple SD Gothic Neo", "Noto Sans SC", "Yu Gothic", "Malgun Gothic", sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* Metrics */
@@ -124,10 +124,45 @@ code {
   overflow-wrap: anywhere;
 }
 
-/* Language visibility */
-html[data-lang="zh"] [data-i18n="en"],
-html[data-lang="en"] [data-i18n="zh"] {
-  display: none !important;
+/* Language-tuned display typography */
+html[data-lang="zh"] {
+  --font-display: "ZCOOL QingKe HuangYou", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+}
+
+html[data-lang="ja"] {
+  --font-display: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+html[data-lang="ko"] {
+  --font-display: "Pixelify Sans", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
+
+html[data-lang="en"] .hero-title,
+html[data-lang="de"] .hero-title,
+html[data-lang="pt"] .hero-title,
+html[data-lang="es"] .hero-title,
+html[data-lang="en"] .sec-title,
+html[data-lang="de"] .sec-title,
+html[data-lang="pt"] .sec-title,
+html[data-lang="es"] .sec-title,
+html[data-lang="en"] .doc-hero h1,
+html[data-lang="de"] .doc-hero h1,
+html[data-lang="pt"] .doc-hero h1,
+html[data-lang="es"] .doc-hero h1 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+html[data-lang="ja"] .hero-title,
+html[data-lang="ko"] .hero-title,
+html[data-lang="ja"] .sec-title,
+html[data-lang="ko"] .sec-title,
+html[data-lang="ja"] .doc-hero h1,
+html[data-lang="ko"] .doc-hero h1,
+html[data-lang="ja"] .doc-section h2,
+html[data-lang="ko"] .doc-section h2 {
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 /* Layout container */
@@ -223,35 +258,56 @@ html[data-lang="en"] [data-i18n="zh"] {
   text-decoration: none;
 }
 
-.lang-switch {
+.lang-select-wrap {
+  position: relative;
   display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
   border: 2px solid var(--edge);
   background: var(--well);
-  flex-shrink: 0;
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.45);
 }
 
-.lang-switch button {
+.lang-select-wrap::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--grass-hi);
+  margin-left: 9px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.lang-select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 8px;
+  font-size: 11px;
+  color: var(--ink-2);
+  pointer-events: none;
+}
+
+.lang-select {
   appearance: none;
+  -webkit-appearance: none;
   border: 0;
   background: transparent;
-  color: var(--ink-3);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 12.5px;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 6px 24px 6px 8px;
   cursor: pointer;
   line-height: 1.2;
 }
 
-.lang-switch button.is-on {
-  background: var(--grass);
-  color: var(--ink);
-  box-shadow: inset 2px 2px 0 var(--grass-hi), inset -2px -2px 0 var(--grass-lo);
+.lang-select:hover {
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.lang-switch button:hover:not(.is-on) {
-  color: var(--ink);
-  background: var(--panel);
+.lang-select option {
+  background: #1A1D23;
+  color: #F4EFE2;
 }
 
 /* ==========================================================================
@@ -462,6 +518,15 @@ html[data-lang="en"] [data-i18n="zh"] {
   display: flex;
   align-items: center;
   gap: 18px;
+}
+
+.hero-brand-row > div {
+  min-width: 0;
+}
+
+.hero-brand-row .px-badge {
+  white-space: normal;
+  line-height: 1.35;
 }
 
 .hero-app-icon {
@@ -1347,7 +1412,7 @@ html[data-lang="en"] [data-i18n="zh"] {
     padding: 4px 8px;
   }
 
-  .lang-switch {
+  .lang-select-wrap {
     margin-left: auto;
   }
 

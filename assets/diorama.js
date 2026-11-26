@@ -23,35 +23,93 @@
   var hudAngle = document.getElementById('diorama-angle');
 
   var SCENE_META = {
-    earth:  { zh: '上海外滩 — 陆家嘴 · 31.2385°N 121.4925°E', en: 'The Bund & Lujiazui · 31.2385°N 121.4925°E', baseW: 1340, baseH: 1520 },
-    cyber:  { zh: '赛博霓虹滤镜 · 陆家嘴天际线 (Pro)',        en: 'Cyber Neon Filter · Lujiazui Skyline (Pro)',  baseW: 1340, baseH: 1520 },
-    winter: { zh: '深冬雪景配方 · 冰封黄浦江',                en: 'Winter Snow Recipe · Frozen Waterfront',       baseW: 1340, baseH: 1520 },
-    moon:   { zh: '月球哥白尼环形山 · NASA LOLA (Pro)',       en: 'Moon Copernicus Crater · NASA LOLA (Pro)',     baseW: 512,  baseH: 512  },
-    mars:   { zh: '火星水手峡谷 · NASA MOLA (Pro)',           en: 'Mars Valles Marineris · NASA MOLA (Pro)',      baseW: 512,  baseH: 512  }
+    earth: {
+      baseW: 1340, baseH: 1520,
+      en: 'The Bund & Lujiazui · 31.2385°N 121.4925°E',
+      zh: '上海外滩 — 陆家嘴 · 31.2385°N 121.4925°E',
+      de: 'The Bund & Lujiazui · 31.2385°N 121.4925°E',
+      pt: 'The Bund e Lujiazui · 31.2385°N 121.4925°E',
+      es: 'The Bund y Lujiazui · 31.2385°N 121.4925°E',
+      ja: '上海・外灘 — 陸家嘴 · 31.2385°N 121.4925°E',
+      ko: '상하이 와이탄 — 루자쭈이 · 31.2385°N 121.4925°E'
+    },
+    cyber: {
+      baseW: 1340, baseH: 1520,
+      en: 'Cyber Neon Filter · Lujiazui Skyline (Pro)',
+      zh: '赛博霓虹滤镜 · 陆家嘴天际线 (Pro)',
+      de: 'Cyber-Neon-Filter · Skyline Lujiazui (Pro)',
+      pt: 'Filtro Cyber Neon · Skyline Lujiazui (Pro)',
+      es: 'Filtro Ciberneón · Skyline Lujiazui (Pro)',
+      ja: 'サイバーネオン · 陸家嘴スカイライン (Pro)',
+      ko: '사이버 네온 필터 · 루자쭈이 스카이라인 (Pro)'
+    },
+    winter: {
+      baseW: 1340, baseH: 1520,
+      en: 'Winter Snow Recipe · Frozen Waterfront',
+      zh: '深冬雪景配方 · 冰封黄浦江',
+      de: 'Winterschnee-Rezept · Vereiste Uferpromenade',
+      pt: 'Receita Neve de Inverno · Orla Congelada',
+      es: 'Receta Nieve Invernal · Ribera Helada',
+      ja: '冬の瑞雪レシピ · 凍結した黄浦江',
+      ko: '한겨울 설경 프리셋 · 얼어붙은 황푸강'
+    },
+    moon: {
+      baseW: 512, baseH: 512,
+      en: 'Moon Copernicus Crater · NASA LOLA (Pro)',
+      zh: '月球哥白尼环形山 · NASA LOLA (Pro)',
+      de: 'Mondkrater Kopernikus · NASA LOLA (Pro)',
+      pt: 'Cratera Copérnico (Lua) · NASA LOLA (Pro)',
+      es: 'Cráter Copérnico (Luna) · NASA LOLA (Pro)',
+      ja: '月面コペルニクス・クレーター · NASA LOLA (Pro)',
+      ko: '달 코페르니쿠스 크레이터 · NASA LOLA (Pro)'
+    },
+    mars: {
+      baseW: 512, baseH: 512,
+      en: 'Mars Valles Marineris · NASA MOLA (Pro)',
+      zh: '火星水手峡谷 · NASA MOLA (Pro)',
+      de: 'Mars Valles Marineris · NASA MOLA (Pro)',
+      pt: 'Marte Valles Marineris · NASA MOLA (Pro)',
+      es: 'Marte Valles Marineris · NASA MOLA (Pro)',
+      ja: '火星マリネリス峡谷 · NASA MOLA (Pro)',
+      ko: '화성 마리네리스 협곡 · NASA MOLA (Pro)'
+    }
+  };
+
+  var HUD_TEXT = {
+    en: { blk: ' blk · ', chunks: ' chunks', moon: '512 × 512 blocks · 200 m/blk · Low-G', mars: '512 × 512 blocks · 500 m/blk · 4× Relief', drag: ' · Drag to turn' },
+    zh: { blk: ' 格 · ',   chunks: ' 区块',   moon: '512 × 512 格 · 200 m/格 · 低重力',    mars: '512 × 512 格 · 500 m/格 · 4× 起伏',    drag: ' · 拖拽旋转' },
+    de: { blk: ' Blk · ', chunks: ' Chunks', moon: '512 × 512 Blöcke · 200 m/Blk · Low-G', mars: '512 × 512 Blöcke · 500 m/Blk · 4× Relief', drag: ' · Ziehen zum Drehen' },
+    pt: { blk: ' blc · ', chunks: ' chunks', moon: '512 × 512 blocos · 200 m/blc · Baixa-G', mars: '512 × 512 blocos · 500 m/blc · 4× Relevo', drag: ' · Arraste para girar' },
+    es: { blk: ' blq · ', chunks: ' chunks', moon: '512 × 512 bloques · 200 m/blq · Baja-G', mars: '512 × 512 bloques · 500 m/blq · 4× Relieve', drag: ' · Arrastra para girar' },
+    ja: { blk: ' ブロック · ', chunks: ' チャンク', moon: '512 × 512 ブロック · 200 m/格 · 低重力', mars: '512 × 512 ブロック · 500 m/格 · 高低差 4×', drag: ' · ドラッグで回転' },
+    ko: { blk: ' 블록 · ', chunks: ' 청크',   moon: '512 × 512 블록 · 200 m/블록 · 저중력', mars: '512 × 512 블록 · 500 m/블록 · 4× 기복', drag: ' · 드래그하여 회전' }
   };
 
   var COMPASS = ['N ↑', 'E →', 'S ↓', 'W ←'];
 
-  function isZh() {
-    return document.documentElement.getAttribute('data-lang') !== 'en';
+  function getLang() {
+    var l = document.documentElement.getAttribute('data-lang') || 'en';
+    return HUD_TEXT[l] ? l : 'en';
   }
 
   function updateHud() {
+    var lang = getLang();
     var m = SCENE_META[state.scene];
-    if (hudPlace) hudPlace.textContent = isZh() ? m.zh : m.en;
+    var htxt = HUD_TEXT[lang];
+    if (hudPlace) hudPlace.textContent = m[lang] || m.en;
     if (hudStats) {
       var w = Math.round(m.baseW * (state.scene === 'moon' || state.scene === 'mars' ? 1 : state.scale));
       var h = Math.round(m.baseH * (state.scene === 'moon' || state.scene === 'mars' ? 1 : state.scale));
       var chunks = Math.ceil(w / 16) * Math.ceil(h / 16);
       if (state.scene === 'moon') {
-        hudStats.textContent = isZh() ? '512 × 512 格 · 200 m/格 · 低重力' : '512 × 512 blocks · 200 m/blk · Low-G';
+        hudStats.textContent = htxt.moon;
       } else if (state.scene === 'mars') {
-        hudStats.textContent = isZh() ? '512 × 512 格 · 500 m/格 · 4× 起伏' : '512 × 512 blocks · 500 m/blk · 4× Relief';
+        hudStats.textContent = htxt.mars;
       } else {
-        hudStats.textContent = w.toLocaleString() + ' × ' + h.toLocaleString() + (isZh() ? ' 格 · ' : ' blk · ') + chunks.toLocaleString() + (isZh() ? ' 区块' : ' chunks');
+        hudStats.textContent = w.toLocaleString() + ' × ' + h.toLocaleString() + htxt.blk + chunks.toLocaleString() + htxt.chunks;
       }
     }
-    if (hudAngle) hudAngle.textContent = COMPASS[state.rot] + (isZh() ? ' · 拖拽旋转' : ' · Drag to turn');
+    if (hudAngle) hudAngle.textContent = COMPASS[state.rot] + htxt.drag;
   }
 
   function shadeHex(hex, factor) {

@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="zh-Hans" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>方舆 Fangyu — 把真实的地方，搭成方块世界 | Turn Real Places Into Block Worlds</title>
-  <meta name="description" content="方舆（Fangyu）是一款运行在 macOS、iPhone、iPad 与 Apple Vision Pro 上的本地地理体素世界创作应用：在真实地图上圈定地球、月球或火星区域，一键生成 1:1 真实地形与地标精雕方块世界，支持实时 Metal 3D 漫游、4K 光追航拍与多格式导出。" />
+  <title>Fangyu — Turn Real Places Into Block Worlds</title>
+  <meta name="description" content="Fangyu is a local-first geographic voxel world studio for macOS, iPhone, iPad, and Apple Vision Pro: select any area on Earth, the Moon, or Mars to build 1:1 terrain and handcrafted landmarks, roam live in native Metal 3D, film 4K ray-traced aerials, and export to Minecraft, 3D printing, and Blender." />
   <meta name="theme-color" content="#15181D" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="方舆 Fangyu — 把真实的地方，搭成方块世界" />
-  <meta property="og:description" content="在真实地图上圈一块地，生成可走进、可航拍、可多格式导出的 1:1 真实地理方块世界。原生支持 macOS、iOS、iPadOS 与 Apple Vision Pro。" />
+  <meta property="og:title" content="Fangyu — Turn Real Places Into Block Worlds" />
+  <meta property="og:description" content="Select any place on Earth, the Moon, or Mars to build a 1:1 block world you can explore in native Metal 3D, film in 4K ray tracing, and export across platforms." />
   <meta property="og:image" content="./assets/showcase-bund.jpg" />
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/fangyu.css" />
+  <script src="./assets/i18n-home.js"></script>
   <script src="./assets/site.js"></script>
 </head>
 <body>
@@ -23,25 +24,31 @@
   <!-- Top Navigation -->
   <header class="site-nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="./index.html" aria-label="方舆 Fangyu Home">
-        <img class="brand-icon" src="./assets/app-icon-256.png" alt="方舆 Fangyu App Icon" width="34" height="34" />
-        <span class="brand-name" data-i18n="zh">方舆</span>
-        <span class="brand-name hero-title-en" data-i18n="en">Fangyu</span>
+      <a class="brand" href="./index.html" aria-label="Fangyu Home">
+        <img class="brand-icon" src="./assets/app-icon-256.png" alt="Fangyu App Icon" width="34" height="34" />
+        <span class="brand-name" data-t="brand.name">Fangyu</span>
         <span class="brand-sub">v1.0</span>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
-        <a href="#features"><span data-i18n="zh">核心特性</span><span data-i18n="en">Features</span></a>
-        <a href="#platforms"><span data-i18n="zh">Apple 全生态</span><span data-i18n="en">Platforms</span></a>
-        <a href="#exports"><span data-i18n="zh">导出生态</span><span data-i18n="en">Exports</span></a>
-        <a href="#pricing"><span data-i18n="zh">方舆 Pro</span><span data-i18n="en">Pricing</span></a>
-        <a href="./support.html"><span data-i18n="zh">技术支持</span><span data-i18n="en">Support</span></a>
-        <a href="./privacy.html"><span data-i18n="zh">隐私政策</span><span data-i18n="en">Privacy</span></a>
+        <a href="#features" data-t="nav.features">Features</a>
+        <a href="#platforms" data-t="nav.platforms">Platforms</a>
+        <a href="#exports" data-t="nav.exports">Exports</a>
+        <a href="#pricing" data-t="nav.pricing">Pricing</a>
+        <a href="./support.html" data-t="nav.support">Support</a>
+        <a href="./privacy.html" data-t="nav.privacy">Privacy</a>
       </nav>
 
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-set-lang="zh" class="is-on" aria-pressed="true">中文</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-select-wrap">
+        <select class="lang-select" data-lang-select aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="zh">简体中文</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
       </div>
     </div>
   </header>
@@ -52,25 +59,19 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <div class="hero-brand-row">
-            <img class="hero-app-icon" src="./assets/app-icon-256.png" alt="方舆 Fangyu 图标" width="82" height="82" />
+            <img class="hero-app-icon" src="./assets/app-icon-256.png" alt="Fangyu App Icon" width="82" height="82" />
             <div>
               <span class="px-badge px-badge-gold">
                 <span class="dot" style="background: var(--gold-hi);"></span>
-                <span data-i18n="zh">Apple Universal App · 地理体素创作工作台</span>
-                <span data-i18n="en">Apple Universal App · Geographic Voxel Studio</span>
+                <span data-t="hero.eyebrow">Apple Universal App · Geographic Voxel Studio</span>
               </span>
-              <h1 class="hero-title" data-i18n="zh">方舆</h1>
-              <h1 class="hero-title hero-title-en" data-i18n="en">Fangyu</h1>
+              <h1 class="hero-title" data-t="brand.name">Fangyu</h1>
             </div>
           </div>
 
-          <p class="hero-tagline" data-i18n="zh">把真实的地方，搭成可以走进去的方块世界。</p>
-          <p class="hero-tagline" data-i18n="en">Turn real places on Earth, the Moon, and Mars into block worlds you can step inside.</p>
+          <p class="hero-tagline" data-t="hero.tagline">Turn real places on Earth, the Moon, and Mars into block worlds you can step inside.</p>
 
-          <p class="hero-lede" data-i18n="zh">
-            古人称大地为「方舆」，《禹迹图》计里画方、每方折地百里；方舆把这件事带进你的 Apple 设备——在真实地图上圈一块地，生成 1:1 真实地形、建筑与手工精修地标的方块世界，随时在 Metal 3D 场景中漫游、用 4K 光追工作台航拍，或导出至 Minecraft、3D 打印与 Blender。
-          </p>
-          <p class="hero-lede" data-i18n="en">
+          <p class="hero-lede" data-t="hero.lede">
             Named after the classical Chinese word for the mapped Earth, Fangyu turns any map selection into a true-scale 1:1 voxel world with real terrain, buildings, and handcrafted landmarks. Roam live in native Metal 3D, film 4K ray-traced aerials, place tabletop dioramas on Apple Vision Pro, or export to Minecraft, 3D printers, and Blender.
           </p>
 
@@ -78,28 +79,16 @@
             <span class="px-badge"><span class="dot" style="background: var(--grass-hi);"></span>macOS 13+</span>
             <span class="px-badge"><span class="dot" style="background: var(--water-hi);"></span>iPhone &amp; iPad</span>
             <span class="px-badge"><span class="dot" style="background: var(--gold-hi);"></span>Apple Vision Pro</span>
-            <span class="px-badge">简体中文 · EN · 日本語 · 繁體中文</span>
+            <span class="px-badge">EN · 简体中文 · 日本語 · 繁體中文</span>
           </div>
 
           <div class="hero-actions">
-            <a class="px-btn px-btn-primary" href="#pricing">
-              <span data-i18n="zh">查看免费版与方舆 Pro</span>
-              <span data-i18n="en">Explore Free &amp; Fangyu Pro</span>
-            </a>
-            <a class="px-btn px-btn-stone" href="#features">
-              <span data-i18n="zh">浏览全部能力</span>
-              <span data-i18n="en">See All Features</span>
-            </a>
-            <a class="px-btn px-btn-water" href="./support.html">
-              <span data-i18n="zh">支持与审核资料</span>
-              <span data-i18n="en">Support &amp; App Info</span>
-            </a>
+            <a class="px-btn px-btn-primary" href="#pricing" data-t="hero.cta_pricing">Explore Free &amp; Fangyu Pro</a>
+            <a class="px-btn px-btn-stone" href="#features" data-t="hero.cta_features">See All Features</a>
+            <a class="px-btn px-btn-water" href="./support.html" data-t="hero.cta_support">Support &amp; App Info</a>
           </div>
 
-          <p class="hero-note" data-i18n="zh">
-            <strong>本地优先 · 零账号零追踪：</strong>世界与渲染素材全部存储在你的设备本地。独立开发应用，非 Minecraft 官方产品，未获 Mojang 或 Microsoft 认可或关联。
-          </p>
-          <p class="hero-note" data-i18n="en">
+          <p class="hero-note" data-t-html="hero.note">
             <strong>Local-first · No accounts, no tracking:</strong> All worlds and renders stay on your device. Independent app — not an official Minecraft product; not approved by or associated with Mojang or Microsoft.
           </p>
         </div>
@@ -109,39 +98,37 @@
           <div class="diorama-top">
             <span class="px-badge px-badge-green">
               <span class="dot" style="background: var(--grass-hi);"></span>
-              <span data-i18n="zh">实时交互沙盘示意</span>
-              <span data-i18n="en">Interactive Voxel Diorama</span>
+              <span data-t="diorama.badge">Interactive Voxel Diorama</span>
             </span>
-            <span class="px-badge" data-i18n="zh">点击或拖拽旋转视角</span>
-            <span class="px-badge" data-i18n="en">Click or drag to rotate</span>
+            <span class="px-badge" data-t="diorama.hint">Click or drag to rotate</span>
           </div>
 
           <div class="diorama-canvas-wrap">
             <canvas id="fy-diorama" role="img" aria-label="Interactive isometric voxel diorama of Shanghai Bund and Lujiazui, Moon crater, and Mars canyon"></canvas>
-            <div class="diorama-hud-tl" id="diorama-place">上海外滩 — 陆家嘴 · 31.2385°N 121.4925°E</div>
-            <div class="diorama-hud-bl" id="diorama-stats">1,340 × 1,520 格 · 7,960 区块</div>
-            <div class="diorama-hud-br" id="diorama-angle">N ↑ · 拖拽旋转</div>
+            <div class="diorama-hud-tl" id="diorama-place">The Bund &amp; Lujiazui · 31.2385°N 121.4925°E</div>
+            <div class="diorama-hud-bl" id="diorama-stats">1,340 × 1,520 blk · 7,980 chunks</div>
+            <div class="diorama-hud-br" id="diorama-angle">N ↑ · Drag to turn</div>
           </div>
 
           <div class="diorama-controls">
             <div class="seg-row">
-              <span class="seg-label"><span data-i18n="zh">场景</span><span data-i18n="en">Scene</span></span>
+              <span class="seg-label" data-t="diorama.scene">Scene</span>
               <div class="seg-group" role="group" aria-label="Scene selector">
-                <button type="button" class="seg-btn is-on" data-scene="earth"><span data-i18n="zh">外滩实景</span><span data-i18n="en">Earth</span></button>
-                <button type="button" class="seg-btn" data-scene="cyber"><span data-i18n="zh">赛博霓虹</span><span data-i18n="en">Cyber</span></button>
-                <button type="button" class="seg-btn" data-scene="winter"><span data-i18n="zh">深冬雪景</span><span data-i18n="en">Winter</span></button>
-                <button type="button" class="seg-btn" data-scene="moon"><span data-i18n="zh">月球</span><span data-i18n="en">Moon</span></button>
-                <button type="button" class="seg-btn" data-scene="mars"><span data-i18n="zh">火星</span><span data-i18n="en">Mars</span></button>
+                <button type="button" class="seg-btn is-on" data-scene="earth" data-t="diorama.earth">Earth</button>
+                <button type="button" class="seg-btn" data-scene="cyber" data-t="diorama.cyber">Cyber</button>
+                <button type="button" class="seg-btn" data-scene="winter" data-t="diorama.winter">Winter</button>
+                <button type="button" class="seg-btn" data-scene="moon" data-t="diorama.moon">Moon</button>
+                <button type="button" class="seg-btn" data-scene="mars" data-t="diorama.mars">Mars</button>
               </div>
             </div>
             <div class="seg-row">
-              <span class="seg-label"><span data-i18n="zh">时段</span><span data-i18n="en">Light</span></span>
+              <span class="seg-label" data-t="diorama.light">Light</span>
               <div class="seg-group" role="group" aria-label="Time of day">
-                <button type="button" class="seg-btn" data-light="day"><span data-i18n="zh">白昼</span><span data-i18n="en">Day</span></button>
-                <button type="button" class="seg-btn is-on-gold" data-light="dusk"><span data-i18n="zh">黄昏</span><span data-i18n="en">Dusk</span></button>
-                <button type="button" class="seg-btn" data-light="night"><span data-i18n="zh">夜色</span><span data-i18n="en">Night</span></button>
+                <button type="button" class="seg-btn" data-light="day" data-t="diorama.day">Day</button>
+                <button type="button" class="seg-btn is-on-gold" data-light="dusk" data-t="diorama.dusk">Dusk</button>
+                <button type="button" class="seg-btn" data-light="night" data-t="diorama.night">Night</button>
               </div>
-              <span class="seg-label" style="margin-left: auto;"><span data-i18n="zh">比例</span><span data-i18n="en">Scale</span></span>
+              <span class="seg-label" style="margin-left: auto;" data-t="diorama.scale">Scale</span>
               <div class="seg-group" role="group" aria-label="Scale selector">
                 <button type="button" class="seg-btn" data-scale="0.5">0.5×</button>
                 <button type="button" class="seg-btn is-on-water" data-scale="1">1.0×</button>
@@ -159,23 +146,19 @@
       <div class="wrap stats-grid">
         <div class="stat-item">
           <div class="stat-num">1:1</div>
-          <div class="stat-label" data-i18n="zh">每格折地 1 米 · 真实高程与城市街景</div>
-          <div class="stat-label" data-i18n="en">1 Meter Per Block · True Elevation &amp; Cities</div>
+          <div class="stat-label" data-t="stats.1">1 Meter Per Block · True Elevation &amp; Cities</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">16+</div>
-          <div class="stat-label" data-i18n="zh">方舆手工精修地标 + 引擎内置全球名胜</div>
-          <div class="stat-label" data-i18n="en">Handcrafted Landmarks + Engine World Monuments</div>
+          <div class="stat-label" data-t="stats.2">Handcrafted Landmarks + Engine World Monuments</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">8</div>
-          <div class="stat-label" data-i18n="zh">生态导出格式 · 游戏 / 光影 / 3D 打印 / Blender</div>
-          <div class="stat-label" data-i18n="en">Export Formats · Games, Shaders, 3D Print &amp; 3D</div>
+          <div class="stat-label" data-t="stats.3">Export Formats · Games, Shaders, 3D Print &amp; 3D</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">4K RT</div>
-          <div class="stat-label" data-i18n="zh">内置 GPU 硬件光追航拍工作台与视频直出</div>
-          <div class="stat-label" data-i18n="en">Built-In GPU Ray-Traced 4K Aerial Studio</div>
+          <div class="stat-label" data-t="stats.4">Built-In GPU Ray-Traced 4K Aerial Studio</div>
         </div>
       </div>
     </section>
@@ -185,40 +168,30 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">WORKFLOW</span>
-          <h2 class="sec-title" data-i18n="zh">从地图到可漫游的方块世界，只需四步</h2>
-          <h2 class="sec-title" data-i18n="en">From real map to playable block world in four steps</h2>
-          <p class="sec-desc" data-i18n="zh">先存入应用本地「方舆世界库」，无需提前折腾目录或挑选平台格式——随时打开 3D 漫游、拍摄 4K 航拍，再按需导出。</p>
-          <p class="sec-desc" data-i18n="en">Every build lands cleanly in your local Fangyu World Library—no terminal commands or upfront folder setup. Explore in 3D, shoot 4K aerials, and export to any device whenever you're ready.</p>
+          <h2 class="sec-title" data-t="wf.title">From real map to playable block world in four steps</h2>
+          <p class="sec-desc" data-t="wf.desc">Every build lands cleanly in your local Fangyu World Library—no terminal commands or upfront folder setup. Explore in 3D, shoot 4K aerials, and export to any device whenever you're ready.</p>
         </div>
 
         <ol class="steps-grid">
           <li class="px-panel-flat step-card">
             <span class="step-num">01</span>
-            <h3 data-i18n="zh">选星球与圈定范围</h3>
-            <h3 data-i18n="en">Pick a Planet &amp; Area</h3>
-            <p data-i18n="zh">在地球、月球或火星地图上搜索地名、粘贴经纬度，或一键直达全球地标预置；支持矩形与任意多边形选区，实时预检区块数与磁盘空间。</p>
-            <p data-i18n="en">Search places, paste coordinates, or jump to curated global landmarks across Earth, Moon, and Mars. Draw rectangles or custom polygons with instant preflight estimates.</p>
+            <h3 data-t="wf.s1.t">Pick a Planet &amp; Area</h3>
+            <p data-t="wf.s1.d">Search places, paste coordinates, or jump to curated global landmarks across Earth, Moon, and Mars. Draw rectangles or custom polygons with instant preflight estimates.</p>
           </li>
           <li class="px-panel-flat step-card">
             <span class="step-num">02</span>
-            <h3 data-i18n="zh">精修地标与风格滤镜</h3>
-            <h3 data-i18n="en">Sculpt &amp; Stylize</h3>
-            <p data-i18n="zh">按需开启建筑内部、Overture 建筑补全、开放激光点云屋顶、1:1 手工地标精雕、色块连贯，或套用赛博霓虹、末日废土、冰雪与水淹滤镜。</p>
-            <p data-i18n="en">Toggle interiors, Overture footprints, open LiDAR roofs, 1:1 landmark sculpting, Sentinel-2 satellite recoloring, or one-click Cyber, Apocalyptic, Ice, and Sunken City filters.</p>
+            <h3 data-t="wf.s2.t">Sculpt &amp; Stylize</h3>
+            <p data-t="wf.s2.d">Toggle interiors, Overture footprints, open LiDAR roofs, 1:1 landmark sculpting, Sentinel-2 satellite recoloring, or one-click Cyber, Apocalyptic, Ice, and Sunken City filters.</p>
           </li>
           <li class="px-panel-flat step-card">
             <span class="step-num">03</span>
-            <h3 data-i18n="zh">实时 3D 漫游与 4K 航拍</h3>
-            <h3 data-i18n="en">Roam in 3D &amp; Film 4K</h3>
-            <p data-i18n="zh">在原生 Metal 渲染器中切换轨道、步行、飞行、卡丁车与无人机五种视角，实时调节天气、时段与环境声；或进入 4K 光追工作台输出航拍成片。</p>
-            <p data-i18n="en">Explore live in native Metal with Orbit, Walk, Fly, Kart, and Drone modes, dynamic weather and synthesized audio—or render 4K ray-traced aerials in CineStudio.</p>
+            <h3 data-t="wf.s3.t">Roam in 3D &amp; Film 4K</h3>
+            <p data-t="wf.s3.d">Explore live in native Metal with Orbit, Walk, Fly, Kart, and Drone modes, dynamic weather and synthesized audio—or render 4K ray-traced aerials in CineStudio.</p>
           </li>
           <li class="px-panel-flat step-card">
             <span class="step-num">04</span>
-            <h3 data-i18n="zh">一键导出至任意生态</h3>
-            <h3 data-i18n="en">Export to Any Platform</h3>
-            <p data-i18n="zh">一键导入 Mac Java 版存档目录、打包 Distant Horizons 光影整合包、隔空投送基岩版 .mcworld 到 iPad/iPhone，或生成 3D 打印 .stl 与 Blender .obj。</p>
-            <p data-i18n="en">Drop straight into Minecraft Java saves, export Distant Horizons + Iris shader modpacks, AirDrop Bedrock .mcworld to iPhone/iPad, or slice watertight .stl models.</p>
+            <h3 data-t="wf.s4.t">Export to Any Platform</h3>
+            <p data-t="wf.s4.d">Drop straight into Minecraft Java saves, export Distant Horizons + Iris shader modpacks, AirDrop Bedrock .mcworld to iPhone/iPad, or slice watertight .stl models.</p>
           </li>
         </ol>
       </div>
@@ -229,49 +202,41 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">SHOWCASE</span>
-          <h2 class="sec-title" data-i18n="zh">真实地理数据与体素光追美学</h2>
-          <h2 class="sec-title" data-i18n="en">Real geographic fidelity meets voxel ray-traced craft</h2>
-          <p class="sec-desc" data-i18n="zh">融合 OpenStreetMap、Overture Maps、开放航拍 LiDAR、Sentinel-2 无云卫星影像与 NASA 行星高程，打造既忠于真实坐标又充满方块魅力的世界。</p>
-          <p class="sec-desc" data-i18n="en">Combining OpenStreetMap, Overture Maps, public airborne LiDAR, Sentinel-2 cloudless imagery, and NASA planetary elevation into crisp voxel worlds.</p>
+          <h2 class="sec-title" data-t="gal.title">Real geographic fidelity meets voxel ray-traced craft</h2>
+          <p class="sec-desc" data-t="gal.desc">Combining OpenStreetMap, Overture Maps, public airborne LiDAR, Sentinel-2 cloudless imagery, and NASA planetary elevation into crisp voxel worlds.</p>
         </div>
 
         <div class="gallery-grid">
           <article class="px-panel gallery-card">
             <div class="gallery-img-wrap">
-              <img src="./assets/showcase-bund.jpg" alt="黄金时刻城市滨江天际线体素光追效果示意" loading="lazy" width="1280" height="800" />
-              <span class="px-badge px-badge-gold gallery-tag"><span data-i18n="zh">1:1 地标精雕 · 黄昏光追</span><span data-i18n="en">1:1 Landmark Sculpting</span></span>
+              <img src="./assets/showcase-bund.jpg" alt="Golden-hour voxel coastal skyline across a river" loading="lazy" width="1020" height="600" />
+              <span class="px-badge px-badge-gold gallery-tag" data-t="gal.c1.tag">1:1 Landmark Sculpting</span>
             </div>
             <div class="gallery-body">
-              <h3 data-i18n="zh">实景城市与标杆地标 1:1 精修</h3>
-              <h3 data-i18n="en">Real Skylines &amp; Handcrafted Landmarks</h3>
-              <p data-i18n="zh">自动识别选区内的经典地标建筑，按真实 WGS-84 坐标与标高压入精细体素模型；支持突破原版高度限制，让 632 米上海中心与 828 米哈利法塔保持完整比例。</p>
-              <p data-i18n="en">Automatically replaces coarse footprints with WGS-84 aligned 1:1 sculpted voxel landmarks, with extended height datapacks so supertalls keep their full real-world stature.</p>
+              <h3 data-t="gal.c1.t">Real Skylines &amp; Handcrafted Landmarks</h3>
+              <p data-t="gal.c1.d">Automatically replaces coarse footprints with WGS-84 aligned 1:1 sculpted voxel landmarks, with extended height datapacks so supertalls keep their full real-world stature.</p>
             </div>
           </article>
 
           <article class="px-panel gallery-card">
             <div class="gallery-img-wrap">
-              <img src="./assets/showcase-cyber.jpg" alt="雨夜赛博霓虹风格滤镜体素都市效果示意" loading="lazy" width="1280" height="800" />
-              <span class="px-badge px-badge-water gallery-tag"><span data-i18n="zh">风格滤镜 · 动态雨夜</span><span data-i18n="en">Style Filters · Night Rain</span></span>
+              <img src="./assets/showcase-cyber.jpg" alt="Rain-slicked cyber neon voxel city at night" loading="lazy" width="1280" height="799" />
+              <span class="px-badge px-badge-water gallery-tag" data-t="gal.c2.tag">Style Filters · Night Rain</span>
             </div>
             <div class="gallery-body">
-              <h3 data-i18n="zh">四大一键风格滤镜与实时天气</h3>
-              <h3 data-i18n="en">One-Click Style Filters &amp; Live Weather</h3>
-              <p data-i18n="zh">将整座真实城市一键重塑为赛博霓虹、末日废土、冰雪末日或水淹之城，同时保留精修地标轮廓；搭配湿润路面反光、动态云层、玻璃幕墙反射与实时雨雪声场。</p>
-              <p data-i18n="en">Restyle entire districts into Cyber Neon, Post-Apocalyptic, Frozen Apocalypse, or Sunken City while preserving sculpted landmarks—complete with wet street reflections and live weather audio.</p>
+              <h3 data-t="gal.c2.t">One-Click Style Filters &amp; Live Weather</h3>
+              <p data-t="gal.c2.d">Restyle entire districts into Cyber Neon, Post-Apocalyptic, Frozen Apocalypse, or Sunken City while preserving sculpted landmarks—complete with wet street reflections and live weather audio.</p>
             </div>
           </article>
 
           <article class="px-panel gallery-card">
             <div class="gallery-img-wrap">
-              <img src="./assets/showcase-planets.jpg" alt="月球环形山与火星峡谷立体体素微缩沙盘效果示意" loading="lazy" width="1280" height="800" />
-              <span class="px-badge px-badge-green gallery-tag"><span data-i18n="zh">月球与火星 · 空间微缩沙盘</span><span data-i18n="en">Moon &amp; Mars · Spatial Diorama</span></span>
+              <img src="./assets/showcase-planets.jpg" alt="Lunar crater and Martian canyon voxel tabletop diorama" loading="lazy" width="1280" height="799" />
+              <span class="px-badge px-badge-green gallery-tag" data-t="gal.c3.tag">Moon &amp; Mars · Spatial Diorama</span>
             </div>
             <div class="gallery-body">
-              <h3 data-i18n="zh">跨星球地貌与 Vision Pro 桌面沙盘</h3>
-              <h3 data-i18n="en">Planetary Terrain &amp; Tabletop Dioramas</h3>
-              <p data-i18n="zh">接入 NASA LOLA / MOLA 真实遥感高程与 USGS 行星底图，在地球之外探索月球环形山与火星水手峡谷，更可在 Apple Vision Pro 桌面上以微缩沙盘近距离把玩。</p>
-              <p data-i18n="en">Explore craters and canyons built from real NASA LOLA/MOLA elevation and USGS basemaps, or inspect any world as an interactive gravity-aligned diorama on Apple Vision Pro.</p>
+              <h3 data-t="gal.c3.t">Planetary Terrain &amp; Tabletop Dioramas</h3>
+              <p data-t="gal.c3.d">Explore craters and canyons built from real NASA LOLA/MOLA elevation and USGS basemaps, or inspect any world as an interactive gravity-aligned diorama on Apple Vision Pro.</p>
             </div>
           </article>
         </div>
@@ -283,20 +248,17 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">CORE CAPABILITIES</span>
-          <h2 class="sec-title" data-i18n="zh">为探索者、建造者与视频创作者打造</h2>
-          <h2 class="sec-title" data-i18n="en">Built for explorers, builders, and visual storytellers</h2>
+          <h2 class="sec-title" data-t="feat.title">Built for explorers, builders, and visual storytellers</h2>
         </div>
 
         <div class="features-grid">
           <div class="px-panel feat-card">
             <div class="feat-head">
               <div class="feat-icon">3D</div>
-              <span class="px-badge px-badge-green"><span data-i18n="zh">免费包含</span><span data-i18n="en">Included Free</span></span>
+              <span class="px-badge px-badge-green" data-t="badge.free_inc">Included Free</span>
             </div>
-            <h3 data-i18n="zh">原生 Metal 实时漫游与五种视角</h3>
-            <h3 data-i18n="en">Native Metal 3D Roaming (5 Modes)</h3>
-            <p data-i18n="zh">无需启动任何外部游戏即可在 1:1 方块世界中流畅漫游。支持轨道俯瞰、街头步行、自由飞行、卡丁车漂移与平滑无人机五种操控模式，支持外接游戏手柄、出生点定位、实时合成环境音效与 60 fps 实况 MP4 录制。</p>
-            <p data-i18n="en">Step directly into your 1:1 world without launching an external game. Switch between Orbit, Walk, Fly, Kart, and Drone with hardware game controller support, synthesized spatial soundscapes, and 60 fps live MP4 capture.</p>
+            <h3 data-t="feat.f1.t">Native Metal 3D Roaming (5 Modes)</h3>
+            <p data-t="feat.f1.d">Step directly into your 1:1 world without launching an external game. Switch between Orbit, Walk, Fly, Kart, and Drone with hardware game controller support, synthesized spatial soundscapes, and 60 fps live MP4 capture.</p>
             <div class="feat-tags">
               <span>Metal / MetalFX</span><span>Bliss / Complementary / Photon</span><span>60 fps MP4</span>
             </div>
@@ -307,10 +269,8 @@
               <div class="feat-icon">RT</div>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">4K 光追航拍工作台（CineStudio）</h3>
-            <h3 data-i18n="en">4K Ray-Traced Aerial Studio</h3>
-            <p data-i18n="zh">内置双级 Brickmap GPU 硬件路径追踪渲染器与 À-Trous 降噪。提供大师镜头（多段自动剪辑）、一键短片（渐远、冲天、螺旋、彗星、希区柯克变焦、FPV）与日落延时模板，直出 16:9 / 9:16 4K 视频与 4K 壁纸。</p>
-            <p data-i18n="en">Two-level brickmap GPU path tracer with À-Trous denoising. Includes MasterShots, QuickShots (Dronie, Rocket, Helix, Dolly Zoom, FPV), and Sunset Hyperlapse templates exporting 16:9 &amp; 9:16 4K video or PNG stills.</p>
+            <h3 data-t="feat.f2.t">4K Ray-Traced Aerial Studio</h3>
+            <p data-t="feat.f2.d">Two-level brickmap GPU path tracer with À-Trous denoising. Includes MasterShots, QuickShots (Dronie, Rocket, Helix, Dolly Zoom, FPV), and Sunset Hyperlapse templates exporting 16:9 &amp; 9:16 4K video or PNG stills.</p>
             <div class="feat-tags">
               <span>3840×2160 MP4</span><span>4K PNG</span><span>LabPBR</span>
             </div>
@@ -319,12 +279,10 @@
           <div class="px-panel feat-card">
             <div class="feat-head">
               <div class="feat-icon">LM</div>
-              <span class="px-badge px-badge-green"><span data-i18n="zh">免费包含</span><span data-i18n="en">Included Free</span></span>
+              <span class="px-badge px-badge-green" data-t="badge.free_inc">Included Free</span>
             </div>
-            <h3 data-i18n="zh">三层地标精雕与 LiDAR 屋顶精修</h3>
-            <h3 data-i18n="en">Multi-Layer Landmark &amp; LiDAR Refinement</h3>
-            <p data-i18n="zh">内置 16 座方舆手工精雕地标与数十座引擎地标，自动识别选区并无缝替换粗糙体块；支持色块连贯去噪、Java 版高清立面、开放航拍 LiDAR 屋顶与树冠精修（覆盖美/法/德/荷/瑞等地区）以及地标探索成就。</p>
-            <p data-i18n="en">16 Fangyu handcrafted voxel landmarks plus built-in world monuments, paired with coherent surface patching, HD building facades, open airborne LiDAR roof/canopy geometry, and in-game landmark advancements.</p>
+            <h3 data-t="feat.f3.t">Multi-Layer Landmark &amp; LiDAR Refinement</h3>
+            <p data-t="feat.f3.d">16 Fangyu handcrafted voxel landmarks plus built-in world monuments, paired with coherent surface patching, HD building facades, open airborne LiDAR roof/canopy geometry, and in-game landmark advancements.</p>
             <div class="feat-tags">
               <span>16 Handcrafted</span><span>Open LiDAR</span><span>Overture Maps</span>
             </div>
@@ -335,10 +293,8 @@
               <div class="feat-icon">FX</div>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">卫星实景取色 &amp; 四大风格滤镜</h3>
-            <h3 data-i18n="en">Satellite Recoloring &amp; Style Filters</h3>
-            <p data-i18n="zh">调用 Sentinel-2 无云 10 米分辨率卫星影像，在 Oklab 感知色彩空间中为每栋建筑的屋顶与外墙还原真实色彩；亦可一键切换赛博霓虹、末日废土、冰雪末日、水淹之城四种主题风格。</p>
-            <p data-i18n="en">Samples Sentinel-2 cloudless imagery in perceptual Oklab color space to match real rooftops and facades—or instantly transform whole neighborhoods with 4 dramatic architectural style filters.</p>
+            <h3 data-t="feat.f4.t">Satellite Recoloring &amp; Style Filters</h3>
+            <p data-t="feat.f4.d">Samples Sentinel-2 cloudless imagery in perceptual Oklab color space to match real rooftops and facades—or instantly transform whole neighborhoods with 4 dramatic architectural style filters.</p>
             <div class="feat-tags">
               <span>Sentinel-2 Oklab</span><span>Cyber Neon</span><span>Sunken City</span>
             </div>
@@ -349,10 +305,8 @@
               <div class="feat-icon">ED</div>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">局部补绘 &amp; 跨区域无缝拼接</h3>
-            <h3 data-i18n="en">Local Map Patching &amp; Seamless Stitching</h3>
-            <p data-i18n="zh">地图上缺少校园新楼、老家院落、道路或河道？在选址地图上直接手绘补齐，随世界一起生成。还能将不同时间生成的多块选区按精确经纬度无缝拼接进同一座超大世界。</p>
-            <p data-i18n="en">Missing a new campus building, hometown courtyard, road, or canal on the map? Sketch patches directly before generation, or stitch multiple selections into one continuous world by exact coordinates.</p>
+            <h3 data-t="feat.f5.t">Local Map Patching &amp; Seamless Stitching</h3>
+            <p data-t="feat.f5.d">Missing a new campus building, hometown courtyard, road, or canal on the map? Sketch patches directly before generation, or stitch multiple selections into one continuous world by exact coordinates.</p>
             <div class="feat-tags">
               <span>Custom Patches</span><span>Multi-Region Stitch</span><span>Auto-Tiling</span>
             </div>
@@ -361,12 +315,10 @@
           <div class="px-panel feat-card">
             <div class="feat-head">
               <div class="feat-icon">TX</div>
-              <span class="px-badge px-badge-green"><span data-i18n="zh">CC0 免费商用</span><span data-i18n="en">CC0 Built-In</span></span>
+              <span class="px-badge px-badge-green" data-t="badge.cc0">CC0 Built-In</span>
             </div>
-            <h3 data-i18n="zh">内置建筑材质包 &amp; 本地 .zip 加载</h3>
-            <h3 data-i18n="en">Built-In PBR Packs &amp; Custom .zip</h3>
-            <p data-i18n="zh">自带方舆原创 64×64 建筑体素材质与三套免费可商用 CC0 风格包（积木风、都市 64x PBR、古建 32x），并支持导入任意 Java 版资源包 .zip（含 LabPBR 法线与高光贴图），同步用于 3D 预览、4K 光追与整合包导出。</p>
-            <p data-i18n="en">Includes Fangyu's original architectural PBR textures plus three CC0 packs (Promo Brick, Urban 64x PBR, Heritage 32x), or load any Java Edition .zip resource pack with LabPBR normals and specular maps.</p>
+            <h3 data-t="feat.f6.t">Built-In PBR Packs &amp; Custom .zip</h3>
+            <p data-t="feat.f6.d">Includes Fangyu's original architectural PBR textures plus three CC0 packs (Promo Brick, Urban 64x PBR, Heritage 32x), or load any Java Edition .zip resource pack with LabPBR normals and specular maps.</p>
             <div class="feat-tags">
               <span>Urban 64x PBR</span><span>Heritage 32x</span><span>LabPBR .zip</span>
             </div>
@@ -376,29 +328,26 @@
         <!-- Built-in 16 Sculpted Landmarks Showcase -->
         <div class="px-panel-flat" style="margin-top: 26px;">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
-            <h3 style="font-size: 16.5px;">
-              <span data-i18n="zh">方舆内置 16 座 1:1 手工体素精雕地标（持续扩展，并支持自定义 .schem 挂载）</span>
-              <span data-i18n="en">16 Handcrafted 1:1 Sculpted Landmarks Built In (plus Engine Landmarks &amp; Custom .schem)</span>
-            </h3>
+            <h3 style="font-size: 16.5px;" data-t="lm.title">16 Handcrafted 1:1 Sculpted Landmarks Built In (plus Engine Landmarks &amp; Custom .schem)</h3>
             <span class="px-badge px-badge-gold">WGS-84 1:1</span>
           </div>
           <div class="landmark-wall">
-            <span class="landmark-chip"><span data-i18n="zh">东方明珠塔</span><span data-i18n="en">Oriental Pearl Tower</span><small>Shanghai</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">上海中心大厦</span><span data-i18n="en">Shanghai Tower</span><small>632m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">上海环球金融中心</span><span data-i18n="en">Shanghai WFC</span><small>492m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">金茂大厦</span><span data-i18n="en">Jin Mao Tower</span><small>421m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">外滩海关大楼</span><span data-i18n="en">Bund Customs House</span><small>Shanghai</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">故宫太和殿</span><span data-i18n="en">Hall of Supreme Harmony</span><small>Beijing</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">天坛祈年殿</span><span data-i18n="en">Temple of Heaven</span><small>Beijing</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">广州塔</span><span data-i18n="en">Canton Tower</span><small>600m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">黄鹤楼</span><span data-i18n="en">Yellow Crane Tower</span><small>Wuhan</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">西湖雷峰塔</span><span data-i18n="en">Leifeng Pagoda</span><small>Hangzhou</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">台北 101</span><span data-i18n="en">Taipei 101</span><small>508m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">埃菲尔铁塔</span><span data-i18n="en">Eiffel Tower</span><small>Paris</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">东京塔</span><span data-i18n="en">Tokyo Tower</span><small>Tokyo</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">哈利法塔</span><span data-i18n="en">Burj Khalifa</span><small>828m</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">泰姬陵</span><span data-i18n="en">Taj Mahal</span><small>Agra</small></span>
-            <span class="landmark-chip"><span data-i18n="zh">吉萨胡夫金字塔</span><span data-i18n="en">Great Pyramid of Giza</span><small>Cairo</small></span>
+            <span class="landmark-chip"><span data-t="lm.1">Oriental Pearl Tower</span><small>Shanghai</small></span>
+            <span class="landmark-chip"><span data-t="lm.2">Shanghai Tower</span><small>632m</small></span>
+            <span class="landmark-chip"><span data-t="lm.3">Shanghai WFC</span><small>492m</small></span>
+            <span class="landmark-chip"><span data-t="lm.4">Jin Mao Tower</span><small>421m</small></span>
+            <span class="landmark-chip"><span data-t="lm.5">Bund Customs House</span><small>Shanghai</small></span>
+            <span class="landmark-chip"><span data-t="lm.6">Hall of Supreme Harmony</span><small>Beijing</small></span>
+            <span class="landmark-chip"><span data-t="lm.7">Temple of Heaven</span><small>Beijing</small></span>
+            <span class="landmark-chip"><span data-t="lm.8">Canton Tower</span><small>600m</small></span>
+            <span class="landmark-chip"><span data-t="lm.9">Yellow Crane Tower</span><small>Wuhan</small></span>
+            <span class="landmark-chip"><span data-t="lm.10">Leifeng Pagoda</span><small>Hangzhou</small></span>
+            <span class="landmark-chip"><span data-t="lm.11">Taipei 101</span><small>508m</small></span>
+            <span class="landmark-chip"><span data-t="lm.12">Eiffel Tower</span><small>Paris</small></span>
+            <span class="landmark-chip"><span data-t="lm.13">Tokyo Tower</span><small>Tokyo</small></span>
+            <span class="landmark-chip"><span data-t="lm.14">Burj Khalifa</span><small>828m</small></span>
+            <span class="landmark-chip"><span data-t="lm.15">Taj Mahal</span><small>Agra</small></span>
+            <span class="landmark-chip"><span data-t="lm.16">Great Pyramid of Giza</span><small>Cairo</small></span>
           </div>
         </div>
       </div>
@@ -409,10 +358,8 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">UNIVERSAL APPLE APP</span>
-          <h2 class="sec-title" data-i18n="zh">一个应用，原生适配四大 Apple 平台</h2>
-          <h2 class="sec-title" data-i18n="en">One Universal Purchase across every Apple screen</h2>
-          <p class="sec-desc" data-i18n="zh">共享同一 Bundle ID（<code>com.entropysniper.fangyu</code>），支持 Apple Universal Purchase 与家人共享：在任一设备解锁方舆 Pro，名下所有 Apple 设备同步生效。</p>
-          <p class="sec-desc" data-i18n="en">Unified under Bundle ID <code>com.entropysniper.fangyu</code> with Apple Universal Purchase and Family Sharing across Mac, iPhone, iPad, and Apple Vision Pro.</p>
+          <h2 class="sec-title" data-t="plat.title">One Universal Purchase across every Apple screen</h2>
+          <p class="sec-desc" data-t-html="plat.desc">Unified under Bundle ID <code>com.entropysniper.fangyu</code> with Apple Universal Purchase and Family Sharing across Mac, iPhone, iPad, and Apple Vision Pro.</p>
         </div>
 
         <div class="platforms-grid">
@@ -422,12 +369,9 @@
               <span class="plat-req">macOS 13.0+ · Apple Silicon</span>
             </div>
             <ul class="plat-list">
-              <li data-i18n="zh">原生 AppKit「方舆像素」界面与 Metal / MetalFX 实时 3D 渲染</li>
-              <li data-i18n="en">Native AppKit pixel studio UI with Metal &amp; MetalFX upscaled 3D rendering</li>
-              <li data-i18n="zh">严格遵循 App Sandbox，首次授权 Minecraft <code>saves</code> 目录后以安全书签永久记住</li>
-              <li data-i18n="en">Strict App Sandbox with Security-Scoped Bookmarks for one-click Minecraft saves import</li>
-              <li data-i18n="zh">内置硬件光追 4K 航拍工作台，支持安静模式限制核心占用与 Dock 进度指示</li>
-              <li data-i18n="en">Built-in 4K ray-traced CineStudio, Quiet Mode CPU throttle, and AirDrop .mcworld to iPhone/iPad</li>
+              <li data-t="plat.mac.1">Native AppKit pixel studio UI with Metal &amp; MetalFX upscaled 3D rendering</li>
+              <li data-t-html="plat.mac.2">Strict App Sandbox with Security-Scoped Bookmarks for one-click Minecraft <code>saves</code> import</li>
+              <li data-t="plat.mac.3">Built-in 4K ray-traced CineStudio, Quiet Mode CPU throttle, and AirDrop .mcworld to iPhone/iPad</li>
             </ul>
           </div>
 
@@ -437,12 +381,9 @@
               <span class="plat-req">iOS / iPadOS 16.0+</span>
             </div>
             <ul class="plat-list">
-              <li data-i18n="zh">自适应 UIKit 界面，支持 iPad 分屏视图、触控双摇杆、外接键盘与游戏手柄</li>
-              <li data-i18n="en">Adaptive UIKit layout with iPad Split View, touch virtual controls, hardware keyboards &amp; gamepads</li>
-              <li data-i18n="zh">手机与平板本地直接选区、生成与 3D 漫游，无需云端排队或账号登录</li>
-              <li data-i18n="en">Generate and roam real worlds directly on device—no accounts, no cloud queues</li>
-              <li data-i18n="zh">导出基岩版 <code>.mcworld</code> 后可直接点选「在 Minecraft 中打开」一键导入游玩</li>
-              <li data-i18n="en">One-tap "Open in Minecraft" for exported Bedrock <code>.mcworld</code> packages or share via Files</li>
+              <li data-t="plat.ios.1">Adaptive UIKit layout with iPad Split View, touch virtual controls, hardware keyboards &amp; gamepads</li>
+              <li data-t="plat.ios.2">Generate and roam real worlds directly on device—no accounts, no cloud queues</li>
+              <li data-t-html="plat.ios.3">One-tap "Open in Minecraft" for exported Bedrock <code>.mcworld</code> packages or share via Files</li>
             </ul>
           </div>
 
@@ -452,12 +393,9 @@
               <span class="plat-req">visionOS 2.0+</span>
             </div>
             <ul class="plat-list">
-              <li data-i18n="zh">桌面立体微缩沙盘（RealityKit Volumetric Volume）：捏合缩放、拖拽旋转、悬浮天气条与地标标牌</li>
-              <li data-i18n="en">Gravity-aligned tabletop Diorama Volume (RealityKit): pinch to scale, drag to spin, floating weather bar &amp; landmark callouts</li>
-              <li data-i18n="zh">点击地标即可「踏入世界」，在 CompositorServices 全沉浸式双目立体空间中 1:1 漫游真实城市</li>
-              <li data-i18n="en">Tap any landmark to enter a full 1:1 stereo Immersive Space driven by CompositorServices + Metal</li>
-              <li data-i18n="zh">完整空间手势、游戏手柄导航与实时动态天气立体渲染</li>
-              <li data-i18n="en">Full spatial gestures, game controller navigation, and dynamic stereo weather</li>
+              <li data-t="plat.vis.1">Gravity-aligned tabletop Diorama Volume (RealityKit): pinch to scale, drag to spin, floating weather bar &amp; landmark callouts</li>
+              <li data-t="plat.vis.2">Tap any landmark to enter a full 1:1 stereo Immersive Space driven by CompositorServices + Metal</li>
+              <li data-t="plat.vis.3">Full spatial gestures, game controller navigation, and dynamic stereo weather</li>
             </ul>
           </div>
         </div>
@@ -469,22 +407,18 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">EXPORT ECOSYSTEM</span>
-          <h2 class="sec-title" data-i18n="zh">一次生成，导出 8 种游戏与创作格式</h2>
-          <h2 class="sec-title" data-i18n="en">Generate once, export to 8 gaming &amp; 3D formats</h2>
-          <p class="sec-desc" data-i18n="zh">无需重复框选下载：世界保存在本地世界库后，随时按目标设备、建筑服务器、3D 打印机或三维软件导出。</p>
-          <p class="sec-desc" data-i18n="en">No need to re-download map data: export any world in your library to games, shader modpacks, 3D printers, or VFX pipelines anytime.</p>
+          <h2 class="sec-title" data-t="exp.title">Generate once, export to 8 gaming &amp; 3D formats</h2>
+          <p class="sec-desc" data-t="exp.desc">No need to re-download map data: export any world in your library to games, shader modpacks, 3D printers, or VFX pipelines anytime.</p>
         </div>
 
         <div class="exports-grid">
           <div class="px-panel-flat export-card">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <span class="export-ext">Java 1.21.4+</span>
-              <span class="px-badge px-badge-green"><span data-i18n="zh">免费</span><span data-i18n="en">Free</span></span>
+              <span class="px-badge px-badge-green" data-t="badge.free">Free</span>
             </div>
-            <h3 data-i18n="zh">Minecraft Java 版存档</h3>
-            <h3 data-i18n="en">Minecraft: Java Edition</h3>
-            <p data-i18n="zh">兼容官方启动器、Prism、Modrinth、HMCL、PCL；完整保留 1:1 精修地标、超高数据包与高清立面。</p>
-            <p data-i18n="en">Works with Official Launcher, Prism, Modrinth, HMCL &amp; PCL; preserves landmarks, extended height, and HD facades.</p>
+            <h3 data-t="exp.java.t">Minecraft: Java Edition</h3>
+            <p data-t="exp.java.d">Works with Official Launcher, Prism, Modrinth, HMCL &amp; PCL; preserves landmarks, extended height, and HD facades.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -492,10 +426,8 @@
               <span class="export-ext">.mrpack</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">光影远景整合包</h3>
-            <h3 data-i18n="en">Shader &amp; LOD Modpack</h3>
-            <p data-i18n="zh">内嵌世界与预烘焙 Distant Horizons 远景库，自动配置 Sodium、Iris 与精选光影，开箱即享 256 区块视距。</p>
-            <p data-i18n="en">Embeds your world + pre-baked Distant Horizons LODs with Sodium, Iris, and shaders for instant 256-chunk skylines.</p>
+            <h3 data-t="exp.mrpack.t">Shader &amp; LOD Modpack</h3>
+            <p data-t="exp.mrpack.d">Embeds your world + pre-baked Distant Horizons LODs with Sodium, Iris, and shaders for instant 256-chunk skylines.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -503,10 +435,8 @@
               <span class="export-ext">Creator Kit</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">创作者素材包</h3>
-            <h3 data-i18n="en">Creator Asset Kit</h3>
-            <p data-i18n="zh">单文件夹打包光影整合包、7 张内置光追 4K 静帧（白昼/日落/蓝调/夜景）与可选日落延时短片，便于自媒体发布。</p>
-            <p data-i18n="en">One folder containing the shader modpack, 7 ray-traced 4K stills across lighting phases, guide, and optional sunset clip.</p>
+            <h3 data-t="exp.kit.t">Creator Asset Kit</h3>
+            <p data-t="exp.kit.d">One folder containing the shader modpack, 7 ray-traced 4K stills across lighting phases, guide, and optional sunset clip.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -514,10 +444,8 @@
               <span class="export-ext">.mcworld</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">Minecraft 基岩版</h3>
-            <h3 data-i18n="en">Bedrock Edition</h3>
-            <p data-i18n="zh">适用 iPhone / iPad App Store 版、Mac 教育版与 Windows 基岩版；支持隔空投送（AirDrop）或双击直接导入。</p>
-            <p data-i18n="en">For iPhone/iPad App Store Minecraft, Mac Education, and Windows Bedrock; AirDrop or double-click to import.</p>
+            <h3 data-t="exp.bedrock.t">Bedrock Edition</h3>
+            <p data-t="exp.bedrock.d">For iPhone/iPad App Store Minecraft, Mac Education, and Windows Bedrock; AirDrop or double-click to import.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -525,10 +453,8 @@
               <span class="export-ext">.schem</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">WorldEdit / Axiom 蓝图</h3>
-            <h3 data-i18n="en">Sponge Schematic v2</h3>
-            <p data-i18n="zh">标准 Sponge Schematic v2 建筑蓝图，直接用 WorldEdit（<code>//schem load</code>）、Axiom 或 Litematica 贴入服务器。</p>
-            <p data-i18n="en">Standard Sponge Schematic v2 blueprint ready to paste into servers or worlds with WorldEdit, Axiom, or Litematica.</p>
+            <h3 data-t="exp.schem.t">Sponge Schematic v2</h3>
+            <p data-t-html="exp.schem.d">Standard Sponge Schematic v2 blueprint ready to paste into servers or worlds with WorldEdit (<code>//schem load</code>), Axiom, or Litematica.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -536,10 +462,8 @@
               <span class="export-ext">.stl</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">3D 打印全封闭沙盘</h3>
-            <h3 data-i18n="en">Watertight 3D-Print</h3>
-            <p data-i18n="zh">自动生成 160mm 实心底座全封闭流形网格（毫米单位），直接拖入 Bambu Studio、PrusaSlicer 或 Cura 切片打印。</p>
-            <p data-i18n="en">Auto-capped watertight manifold mesh on a solid 160mm base (mm units) ready for Bambu Studio, PrusaSlicer, or Cura.</p>
+            <h3 data-t="exp.stl.t">Watertight 3D-Print</h3>
+            <p data-t="exp.stl.d">Auto-capped watertight manifold mesh on a solid 160mm base (mm units) ready for Bambu Studio, PrusaSlicer, or Cura.</p>
           </div>
 
           <div class="px-panel-flat export-card">
@@ -547,21 +471,17 @@
               <span class="export-ext">.obj + .mtl</span>
               <span class="px-badge px-badge-gold">Pro</span>
             </div>
-            <h3 data-i18n="zh">Blender / UE5 三维网格</h3>
-            <h3 data-i18n="en">3D &amp; VFX Mesh Pack</h3>
-            <p data-i18n="zh">贪心减面并按方块材质分组，附带 PBR 色彩与粗糙度材质库，拖入 Blender、Cinema 4D、KeyShot 或 Unreal Engine。</p>
-            <p data-i18n="en">Greedy-meshed and grouped by material with PBR colors and roughness—import effortlessly into Blender, C4D, or UE5.</p>
+            <h3 data-t="exp.obj.t">3D &amp; VFX Mesh Pack</h3>
+            <p data-t="exp.obj.d">Greedy-meshed and grouped by material with PBR colors and roughness—import effortlessly into Blender, C4D, or UE5.</p>
           </div>
 
           <div class="px-panel-flat export-card">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <span class="export-ext">Hytale</span>
-              <span class="px-badge"><span data-i18n="zh">实验性</span><span data-i18n="en">Experimental</span></span>
+              <span class="px-badge" data-t="badge.exp">Experimental</span>
             </div>
-            <h3 data-i18n="zh">Hytale 本地世界</h3>
-            <h3 data-i18n="en">Hytale Local World</h3>
-            <p data-i18n="zh">输出包含 <code>client_metadata.json</code> 与区块数据的 Hytale 本地世界目录。</p>
-            <p data-i18n="en">Exports a local Hytale world directory containing <code>client_metadata.json</code> and chunk data.</p>
+            <h3 data-t="exp.hytale.t">Hytale Local World</h3>
+            <p data-t-html="exp.hytale.d">Exports a local Hytale world directory containing <code>client_metadata.json</code> and chunk data.</p>
           </div>
         </div>
       </div>
@@ -572,40 +492,36 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">PRICING · IN-APP PURCHASES</span>
-          <h2 class="sec-title" data-i18n="zh">免费起步，按需升级方舆 Pro</h2>
-          <h2 class="sec-title" data-i18n="en">Start free, unlock everything with Fangyu Pro</h2>
-          <p class="sec-desc" data-i18n="zh">所有方案解锁完全相同的 Pro 功能，均通过 Apple App Store（StoreKit 2）安全交易，并支持 Universal Purchase 跨设备同步与家人共享。</p>
-          <p class="sec-desc" data-i18n="en">All Pro plans unlock the exact same features via Apple StoreKit 2, with Universal Purchase across Mac, iPhone, iPad, and Vision Pro plus Family Sharing.</p>
+          <h2 class="sec-title" data-t="price.title">Start free, unlock everything with Fangyu Pro</h2>
+          <p class="sec-desc" data-t="price.desc">All Pro plans unlock the exact same features via Apple StoreKit 2, with Universal Purchase across Mac, iPhone, iPad, and Vision Pro plus Family Sharing.</p>
         </div>
 
         <div class="pricing-layout">
           <!-- Free vs Pro Breakdown -->
           <div class="px-panel">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-              <h3 style="font-size: 20px;" data-i18n="zh">免费版包含</h3>
-              <h3 style="font-size: 20px;" data-i18n="en">Free Forever Includes</h3>
-              <span class="px-badge px-badge-green">¥0 / $0</span>
+              <h3 style="font-size: 20px;" data-t="price.free_head">Free Forever Includes</h3>
+              <span class="px-badge px-badge-green">$0 / ¥0</span>
             </div>
             <ul class="check-list" style="margin-bottom: 22px;">
-              <li><span class="check-mark">✓</span><span data-i18n="zh">1 km² 以内的地球选区生成（支持标准 1 km × 1 km 街区）</span><span data-i18n="en">Earth selections up to 1 km² (including standard 1 km × 1 km districts)</span></li>
-              <li><span class="check-mark">✓</span><span data-i18n="zh">16 座手工精雕地标 + 引擎内置全球地标 + 开放 LiDAR 屋顶</span><span data-i18n="en">16 handcrafted landmarks + engine monuments + open LiDAR roofs</span></li>
-              <li><span class="check-mark">✓</span><span data-i18n="zh">原生 Metal 3D 实时预览、5 种漫游视角、动态天气与环境音效</span><span data-i18n="en">Live native Metal 3D roaming (5 modes), dynamic weather &amp; spatial audio</span></li>
-              <li><span class="check-mark">✓</span><span data-i18n="zh">无损导出 Minecraft: Java Edition 存档（含 3 套内置 CC0 材质包）</span><span data-i18n="en">Lossless Minecraft: Java Edition export (+ 3 built-in CC0 resource packs)</span></li>
+              <li><span class="check-mark">✓</span><span data-t="price.free.1">Earth selections up to 1 km² (including standard 1 km × 1 km districts)</span></li>
+              <li><span class="check-mark">✓</span><span data-t="price.free.2">16 handcrafted landmarks + engine monuments + open LiDAR roofs</span></li>
+              <li><span class="check-mark">✓</span><span data-t="price.free.3">Live native Metal 3D roaming (5 modes), dynamic weather &amp; spatial audio</span></li>
+              <li><span class="check-mark">✓</span><span data-t="price.free.4">Lossless Minecraft: Java Edition export (+ 3 built-in CC0 resource packs)</span></li>
             </ul>
 
             <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 2px solid var(--sep); margin-bottom: 14px;">
-              <h3 style="font-size: 20px; color: var(--gold-hi);" data-i18n="zh">方舆 Pro 额外解锁</h3>
-              <h3 style="font-size: 20px; color: var(--gold-hi);" data-i18n="en">Fangyu Pro Unlocks</h3>
+              <h3 style="font-size: 20px; color: var(--gold-hi);" data-t="price.pro_head">Fangyu Pro Unlocks</h3>
               <span class="px-badge px-badge-gold">8 Pro Features</span>
             </div>
             <ul class="check-list">
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>超大范围世界（&gt; 1 km²）</strong>：整片城区与山谷自动分块无缝拼接</span><span data-i18n="en"><strong>Large-area worlds (&gt; 1 km²)</strong>: entire districts &amp; valleys with auto-tiling</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>月球与火星</strong>：NASA LOLA / MOLA 真实环形山与峡谷地形</span><span data-i18n="en"><strong>Moon &amp; Mars</strong>: real NASA LOLA/MOLA crater and canyon terrain</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>4K 光追航拍工作台</strong>：GPU 路径追踪 4K MP4 视频与 4K PNG 壁纸</span><span data-i18n="en"><strong>4K Ray-Traced Aerial Studio</strong>: GPU path-traced 4K MP4 &amp; PNG stills</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>四大风格滤镜</strong>：赛博霓虹、末日废土、冰雪末日、水淹之城</span><span data-i18n="en"><strong>4 Style Filters</strong>: Cyber Neon, Post-Apocalyptic, Frozen Apocalypse, Sunken City</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>卫星实景取色</strong>：Sentinel-2 无云影像还原真实屋顶与外墙色调</span><span data-i18n="en"><strong>Satellite Color Sampling</strong>: Sentinel-2 cloudless roof &amp; facade recoloring</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>局部补绘 &amp; 跨区域拼接</strong>：手绘缺失建筑道路，无缝合并多块选区</span><span data-i18n="en"><strong>Local Map Patching &amp; Seamless Stitching</strong>: draw missing structures &amp; merge regions</span></li>
-              <li><span class="check-mark check-mark-gold">★</span><span data-i18n="zh"><strong>全生态多格式导出</strong>：.mrpack、素材包、.mcworld、.schem、.stl、.obj</span><span data-i18n="en"><strong>All Export Formats</strong>: .mrpack, Creator Kit, .mcworld, .schem, .stl, .obj</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.1"><strong>Large-area worlds (&gt; 1 km²)</strong>: entire districts &amp; valleys with auto-tiling</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.2"><strong>Moon &amp; Mars</strong>: real NASA LOLA/MOLA crater and canyon terrain</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.3"><strong>4K Ray-Traced Aerial Studio</strong>: GPU path-traced 4K MP4 &amp; PNG stills</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.4"><strong>4 Style Filters</strong>: Cyber Neon, Post-Apocalyptic, Frozen Apocalypse, Sunken City</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.5"><strong>Satellite Color Sampling</strong>: Sentinel-2 cloudless roof &amp; facade recoloring</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.6"><strong>Local Map Patching &amp; Seamless Stitching</strong>: draw missing structures &amp; merge regions</span></li>
+              <li><span class="check-mark check-mark-gold">★</span><span data-t-html="price.pro.7"><strong>All Export Formats</strong>: .mrpack, Creator Kit, .mcworld, .schem, .stl, .obj</span></li>
             </ul>
           </div>
 
@@ -614,48 +530,39 @@
             <div class="plan-cards">
               <div class="px-panel plan-card">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                  <strong data-i18n="zh">按月订阅</strong>
-                  <strong data-i18n="en">Monthly</strong>
+                  <strong data-t="plan.m.name">Monthly</strong>
                 </div>
-                <div class="plan-price"><span data-i18n="zh">¥18</span><span data-i18n="en">$2.99</span></div>
-                <div class="plan-price-sub"><span data-i18n="zh">/ 月（美区 $2.99/月）</span><span data-i18n="en">/ month (CN ¥18/mo)</span></div>
-                <p style="font-size: 13.5px; color: var(--ink-2);" data-i18n="zh">按月自动续期，灵活体验，随时可在 App Store 取消。</p>
-                <p style="font-size: 13.5px; color: var(--ink-2);" data-i18n="en">Auto-renewing monthly subscription. Cancel anytime in App Store settings.</p>
+                <div class="plan-price" data-t="plan.m.price">$2.99</div>
+                <div class="plan-price-sub" data-t="plan.m.sub">/ month (CN ¥18/mo)</div>
+                <p style="font-size: 13.5px; color: var(--ink-2);" data-t="plan.m.desc">Auto-renewing monthly subscription. Cancel anytime in App Store settings.</p>
                 <div style="margin-top: auto; padding-top: 8px;"><span class="px-badge">Family Sharing</span></div>
               </div>
 
               <div class="px-panel plan-card plan-card-featured">
                 <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;">
-                  <strong style="color: var(--gold-hi);" data-i18n="zh">按年订阅</strong>
-                  <strong style="color: var(--gold-hi);" data-i18n="en">Yearly</strong>
-                  <span class="px-badge px-badge-gold"><span data-i18n="zh">推荐</span><span data-i18n="en">Best Value</span></span>
+                  <strong style="color: var(--gold-hi);" data-t="plan.y.name">Yearly</strong>
+                  <span class="px-badge px-badge-gold" data-t="plan.y.badge">Best Value</span>
                 </div>
-                <div class="plan-price"><span data-i18n="zh">¥128</span><span data-i18n="en">$19.99</span></div>
-                <div class="plan-price-sub"><span data-i18n="zh">/ 年（美区 $19.99/年）</span><span data-i18n="en">/ year (CN ¥128/yr)</span></div>
-                <p style="font-size: 13.5px; color: var(--grass-hi); font-weight: 600;" data-i18n="zh">比按月省 40%+ · 随时可在 App Store 取消</p>
-                <p style="font-size: 13.5px; color: var(--grass-hi); font-weight: 600;" data-i18n="en">Save 40%+ vs monthly · Cancel anytime</p>
+                <div class="plan-price" data-t="plan.y.price">$19.99</div>
+                <div class="plan-price-sub" data-t="plan.y.sub">/ year (CN ¥128/yr)</div>
+                <p style="font-size: 13.5px; color: var(--grass-hi); font-weight: 600;" data-t="plan.y.desc">Save 40%+ vs monthly · Cancel anytime</p>
                 <div style="margin-top: auto; padding-top: 8px;"><span class="px-badge px-badge-gold">Universal + Family</span></div>
               </div>
 
               <div class="px-panel plan-card">
                 <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;">
-                  <strong data-i18n="zh">一次性买断</strong>
-                  <strong data-i18n="en">Lifetime</strong>
-                  <span class="px-badge px-badge-green"><span data-i18n="zh">永久</span><span data-i18n="en">Forever</span></span>
+                  <strong data-t="plan.l.name">Lifetime</strong>
+                  <span class="px-badge px-badge-green" data-t="plan.l.badge">Forever</span>
                 </div>
-                <div class="plan-price"><span data-i18n="zh">¥298</span><span data-i18n="en">$39.99</span></div>
-                <div class="plan-price-sub"><span data-i18n="zh">一次性购买（美区 $39.99）</span><span data-i18n="en">One-time (CN ¥298)</span></div>
-                <p style="font-size: 13.5px; color: var(--ink-2);" data-i18n="zh">一次买断，永久解锁全部 Pro 功能，无需续订。</p>
-                <p style="font-size: 13.5px; color: var(--ink-2);" data-i18n="en">One-time non-consumable purchase. Permanent Pro access with no renewal.</p>
+                <div class="plan-price" data-t="plan.l.price">$39.99</div>
+                <div class="plan-price-sub" data-t="plan.l.sub">One-time (CN ¥298)</div>
+                <p style="font-size: 13.5px; color: var(--ink-2);" data-t="plan.l.desc">One-time non-consumable purchase. Permanent Pro access with no renewal.</p>
                 <div style="margin-top: auto; padding-top: 8px;"><span class="px-badge px-badge-green">One-Time</span></div>
               </div>
             </div>
 
             <div class="px-well disclosure-box">
-              <p data-i18n="zh">
-                <strong>自动续期订阅与购买说明：</strong>页面所列价格为中国大陆与美国区参考价，实际价格以所在地区 App Store 显示为准。方舆 Pro 按月与按年为自动续期订阅。确认购买时，费用从你的 Apple 账户扣除；除非在当前周期结束前至少 24 小时关闭自动续期，订阅会按同一价格自动续订并扣费。可随时前往 <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store 账户订阅设置</a> 管理或取消订阅。买断为一次性购买，永久有效。详见 <a href="./terms.html">使用条款</a> 与 <a href="./privacy.html">隐私政策</a>。
-              </p>
-              <p data-i18n="en">
+              <p data-t-html="price.disclosure">
                 <strong>Subscription &amp; Purchase Terms:</strong> Reference prices shown for US and China Mainland storefronts; actual pricing matches your local App Store. Fangyu Pro Monthly and Yearly are auto-renewing subscriptions charged to your Apple Account upon confirmation. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel anytime in <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store Subscription Settings</a>. Lifetime is a one-time permanent purchase. See <a href="./terms.html">Terms of Use</a> and <a href="./privacy.html">Privacy Policy</a>.
               </p>
             </div>
@@ -669,47 +576,30 @@
       <div class="wrap">
         <div class="sec-head">
           <span class="sec-eyebrow">SUPPORT, PRIVACY &amp; COMPLIANCE</span>
-          <h2 class="sec-title" data-i18n="zh">隐私声明、技术支持与开源署名</h2>
-          <h2 class="sec-title" data-i18n="en">Privacy, Support &amp; Legal Documentation</h2>
-          <p class="sec-desc" data-i18n="zh">面向所有用户与 App Store 审核团队公开完整、透明的隐私规范、使用支持与第三方开源 / 地理数据署名文件。</p>
-          <p class="sec-desc" data-i18n="en">Complete, transparent bilingual documentation for users and Apple App Review covering privacy practices, technical support, subscription terms, and third-party notices.</p>
+          <h2 class="sec-title" data-t="doc.title">Privacy, Support &amp; Legal Documentation</h2>
+          <p class="sec-desc" data-t="doc.desc">Complete, transparent multilingual documentation for users and Apple App Review covering privacy practices, technical support, subscription terms, and third-party notices.</p>
         </div>
 
         <div class="review-grid">
           <div class="px-panel review-card">
             <span class="px-badge px-badge-green">App Privacy</span>
-            <h3 data-i18n="zh">隐私政策（零追踪 · 本地优先）</h3>
-            <h3 data-i18n="en">Privacy Policy (Local-First)</h3>
-            <p data-i18n="zh">与 App 内置 <code>PrivacyInfo.xcprivacy</code> 完全一致：无广告追踪 SDK、无需注册账号、存档完全本地保存，详列全部公开地理数据源端点与 macOS 沙盒书签说明。</p>
-            <p data-i18n="en">Aligned 100% with <code>PrivacyInfo.xcprivacy</code>: zero tracking, no accounts, local-first storage, transparent list of public map/elevation endpoints, and macOS Security-Scoped Bookmarks.</p>
-            <a class="px-btn px-btn-stone px-btn-sm" href="./privacy.html">
-              <span data-i18n="zh">阅读隐私政策 →</span>
-              <span data-i18n="en">Read Privacy Policy →</span>
-            </a>
+            <h3 data-t="doc.c1.t">Privacy Policy (Local-First)</h3>
+            <p data-t-html="doc.c1.d">Aligned 100% with <code>PrivacyInfo.xcprivacy</code>: zero tracking, no accounts, local-first storage, transparent list of public map/elevation endpoints, and macOS Security-Scoped Bookmarks.</p>
+            <a class="px-btn px-btn-stone px-btn-sm" href="./privacy.html" data-t="doc.c1.cta">Read Privacy Policy →</a>
           </div>
 
           <div class="px-panel review-card">
             <span class="px-badge px-badge-water">App Support</span>
-            <h3 data-i18n="zh">技术支持与常见问题</h3>
-            <h3 data-i18n="en">Support &amp; Troubleshooting</h3>
-            <p data-i18n="zh">涵盖 Universal Purchase 跨设备恢复购买、订阅管理、Minecraft Java / 基岩版导入指引、沙盒权限重置，以及开发者直连邮箱 <code>entropysniper@gmail.com</code>。</p>
-            <p data-i18n="en">Restore purchases across Apple devices, manage subscriptions, import saves into Java &amp; Bedrock Editions, or contact support directly at <code>entropysniper@gmail.com</code>.</p>
-            <a class="px-btn px-btn-stone px-btn-sm" href="./support.html">
-              <span data-i18n="zh">进入技术支持 →</span>
-              <span data-i18n="en">Visit Support →</span>
-            </a>
+            <h3 data-t="doc.c2.t">Support &amp; Troubleshooting</h3>
+            <p data-t-html="doc.c2.d">Restore purchases across Apple devices, manage subscriptions, import saves into Java &amp; Bedrock Editions, or contact support directly at <code>entropysniper@gmail.com</code>.</p>
+            <a class="px-btn px-btn-stone px-btn-sm" href="./support.html" data-t="doc.c2.cta">Visit Support →</a>
           </div>
 
           <div class="px-panel review-card">
             <span class="px-badge px-badge-gold">EULA &amp; Credits</span>
-            <h3 data-i18n="zh">使用条款与开源 / 数据署名</h3>
-            <h3 data-i18n="en">Terms, EULA &amp; Attributions</h3>
-            <p data-i18n="zh">包含 Apple 标准 EULA、自动续订条款、非 Minecraft 官方声明、开源 Arnis（Apache-2.0）完整 NOTICE、OpenStreetMap（ODbL）及内置 SIL OFL 1.1 字体许可。</p>
-            <p data-i18n="en">Apple Standard EULA, auto-renewal disclosures, Mojang/Microsoft non-affiliation notice, Arnis Apache-2.0 NOTICE, OpenStreetMap ODbL &amp; NASA/USGS data credits, and SIL OFL 1.1 fonts.</p>
-            <a class="px-btn px-btn-stone px-btn-sm" href="./terms.html">
-              <span data-i18n="zh">查看条款与署名 →</span>
-              <span data-i18n="en">View Terms &amp; Credits →</span>
-            </a>
+            <h3 data-t="doc.c3.t">Terms, EULA &amp; Attributions</h3>
+            <p data-t="doc.c3.d">Apple Standard EULA, auto-renewal disclosures, Mojang/Microsoft non-affiliation notice, Arnis Apache-2.0 NOTICE, OpenStreetMap ODbL &amp; NASA/USGS data credits, and SIL OFL 1.1 fonts.</p>
+            <a class="px-btn px-btn-stone px-btn-sm" href="./terms.html" data-t="doc.c3.cta">View Terms &amp; Credits →</a>
           </div>
         </div>
       </div>
@@ -722,42 +612,38 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <img class="brand-icon" src="./assets/app-icon-256.png" alt="方舆 Fangyu" width="32" height="32" />
-            <strong style="font-family: var(--font-display); font-size: 22px; color: var(--ink);">方舆 · Fangyu</strong>
+            <img class="brand-icon" src="./assets/app-icon-256.png" alt="Fangyu" width="32" height="32" />
+            <strong style="font-family: var(--font-display); font-size: 22px; color: var(--ink);" data-t="footer.brand">Fangyu · 方舆</strong>
           </div>
-          <p data-i18n="zh">独立开发的地理体素世界创作应用（Bundle ID: <code>com.entropysniper.fangyu</code>），支持 macOS、iOS、iPadOS 与 visionOS。</p>
-          <p data-i18n="en">Independent geographic voxel world studio (Bundle ID: <code>com.entropysniper.fangyu</code>) for macOS, iOS, iPadOS, and visionOS.</p>
+          <p data-t-html="footer.tagline">Independent geographic voxel world studio (Bundle ID: <code>com.entropysniper.fangyu</code>) for macOS, iOS, iPadOS, and visionOS.</p>
         </div>
 
         <div class="footer-links">
           <div class="footer-col">
-            <h4 data-i18n="zh">产品</h4>
-            <h4 data-i18n="en">Product</h4>
-            <a href="#features"><span data-i18n="zh">核心特性</span><span data-i18n="en">Features</span></a>
-            <a href="#platforms"><span data-i18n="zh">Apple 全生态</span><span data-i18n="en">Platforms</span></a>
-            <a href="#exports"><span data-i18n="zh">8 种导出格式</span><span data-i18n="en">Export Formats</span></a>
-            <a href="#pricing"><span data-i18n="zh">方舆 Pro</span><span data-i18n="en">Fangyu Pro</span></a>
+            <h4 data-t="footer.col.product">Product</h4>
+            <a href="#features" data-t="nav.features">Features</a>
+            <a href="#platforms" data-t="nav.platforms">Platforms</a>
+            <a href="#exports" data-t="footer.exports">8 Export Formats</a>
+            <a href="#pricing" data-t="nav.pricing">Pricing</a>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="zh">支持与合规</h4>
-            <h4 data-i18n="en">Legal &amp; Support</h4>
-            <a href="./support.html"><span data-i18n="zh">技术支持</span><span data-i18n="en">Support</span></a>
-            <a href="./privacy.html"><span data-i18n="zh">隐私政策</span><span data-i18n="en">Privacy Policy</span></a>
-            <a href="./terms.html"><span data-i18n="zh">使用条款与署名</span><span data-i18n="en">Terms &amp; Credits</span></a>
+            <h4 data-t="footer.col.legal">Legal &amp; Support</h4>
+            <a href="./support.html" data-t="nav.support">Support</a>
+            <a href="./privacy.html" data-t="nav.privacy">Privacy</a>
+            <a href="./terms.html" data-t="nav.terms">Terms &amp; Credits</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="zh">联系我们</h4>
-            <h4 data-i18n="en">Contact</h4>
+            <h4 data-t="footer.col.contact">Contact</h4>
             <a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a>
-            <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener"><span data-i18n="zh">管理 App Store 订阅</span><span data-i18n="en">Manage Subscriptions</span></a>
+            <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener" data-t="footer.manage_sub">Manage Subscriptions</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p><strong>免责声明 / Disclaimer:</strong> 方舆为独立开发的地理体素创作应用，非 Minecraft 官方产品，未获 Mojang 或 Microsoft 认可或关联。Fangyu is an independent geographic voxel studio. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
-        <p>世界生成引擎采用开源的 <a href="https://github.com/louis-e/arnis" target="_blank" rel="noopener">Arnis</a>（Apache-2.0）。地理数据来自 OpenStreetMap 贡献者（ODbL）、Overture Maps Foundation、OpenFreeMap、Mapterhorn、EOX Sentinel-2 cloudless 及 NASA PDS / USGS。© 2026 Fangyu (entropysniper).</p>
+        <p data-t-html="footer.disclaimer"><strong>Disclaimer:</strong> Fangyu is an independent geographic voxel studio. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
+        <p data-t-html="footer.credits">Powered by the open-source <a href="https://github.com/louis-e/arnis" target="_blank" rel="noopener">Arnis</a> engine (Apache-2.0). Geographic data from OpenStreetMap contributors (ODbL), Overture Maps Foundation, OpenFreeMap, Mapterhorn, EOX Sentinel-2 cloudless, and NASA PDS / USGS. © 2026 Fangyu (entropysniper).</p>
       </div>
     </div>
   </footer>

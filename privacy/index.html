@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-Hans" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>方舆（Fangyu）隐私政策 · Privacy Policy</title>
-  <meta name="description" content="方舆（Fangyu, com.entropysniper.fangyu）隐私政策：零追踪、无需账号、本地优先存储，完整说明地理数据源与 App Store 购买隐私实践。" />
+  <title>Fangyu Privacy Policy</title>
+  <meta name="description" content="Fangyu (com.entropysniper.fangyu) Privacy Policy: zero tracking, no accounts, local-first storage, public geographic data endpoints, and Apple StoreKit 2 privacy practices." />
   <meta name="theme-color" content="#15181D" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -12,26 +12,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/fangyu.css" />
+  <script src="../assets/i18n-docs.js"></script>
   <script src="../assets/site.js"></script>
 </head>
-<body>
+<body data-page="privacy">
 
   <header class="site-nav">
     <div class="wrap nav-inner">
       <a class="brand" href="../index.html">
-        <img class="brand-icon" src="../assets/app-icon-256.png" alt="方舆 Fangyu" width="34" height="34" />
-        <span class="brand-name">方舆</span>
-        <span class="brand-sub">Fangyu</span>
+        <img class="brand-icon" src="../assets/app-icon-256.png" alt="Fangyu" width="34" height="34" />
+        <span class="brand-name" data-t="brand.name">Fangyu</span>
+        <span class="brand-sub">v1.0</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="../index.html"><span data-i18n="zh">产品主页</span><span data-i18n="en">Home</span></a>
-        <a href="../support.html"><span data-i18n="zh">技术支持</span><span data-i18n="en">Support</span></a>
-        <a href="../privacy.html" class="is-active"><span data-i18n="zh">隐私政策</span><span data-i18n="en">Privacy</span></a>
-        <a href="../terms.html"><span data-i18n="zh">使用条款与署名</span><span data-i18n="en">Terms</span></a>
+        <a href="../index.html" data-t="nav.home">Home</a>
+        <a href="../support.html" data-t="nav.support">Support</a>
+        <a href="../privacy.html" class="is-active" data-t="nav.privacy">Privacy</a>
+        <a href="../terms.html" data-t="nav.terms">Terms &amp; Credits</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-set-lang="zh" class="is-on" aria-pressed="true">中文</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-select-wrap">
+        <select class="lang-select" data-lang-select aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="zh">简体中文</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
       </div>
     </div>
   </header>
@@ -39,129 +47,94 @@
   <section class="doc-hero">
     <div class="wrap-narrow">
       <span class="px-badge px-badge-green">APP PRIVACY · LOCAL-FIRST</span>
-      <h1>方舆（Fangyu）隐私政策 · Privacy Policy</h1>
+      <h1 data-t="priv.h1">Fangyu Privacy Policy</h1>
       <div class="doc-meta">
         <span class="px-badge">Bundle ID: com.entropysniper.fangyu</span>
-        <span class="px-badge">Platforms: macOS · iOS · iPadOS · visionOS</span>
-        <span class="px-badge">Updated: 2026-11</span>
-      </div>
-      <div class="doc-jump">
-        <a class="px-btn px-btn-stone px-btn-sm" href="#zh">跳至简体中文版</a>
-        <a class="px-btn px-btn-water px-btn-sm" href="#en">Jump to English Version</a>
+        <span class="px-badge">macOS · iOS · iPadOS · visionOS</span>
+        <span class="px-badge" data-t="priv.updated">Last Updated: November 2026</span>
       </div>
     </div>
   </section>
 
   <main class="wrap-narrow doc-body">
-    <!-- App Privacy Summary Table (Always Visible in Both Languages) -->
+    <!-- App Privacy Summary Table -->
     <section class="px-panel doc-section" aria-label="App Privacy Summary">
-      <h2>App Store 隐私摘要 · App Privacy Summary</h2>
-      <p>以下摘要与应用程序内嵌的 Apple 隐私清单（<code>PrivacyInfo.xcprivacy</code>）保持严格一致 / The summary below matches the app's bundled Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>):</p>
+      <h2 data-t="priv.sum.h2">App Store Privacy Summary</h2>
+      <p data-t-html="priv.sum.intro">The summary below matches the app's bundled Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>):</p>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>项目 / Category</th>
-              <th>状态 / Status</th>
-              <th>说明 / Details</th>
+              <th data-t="priv.tbl.cat">Category</th>
+              <th data-t="priv.tbl.st">Status</th>
+              <th data-t="priv.tbl.det">Details</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>跨应用追踪 / Tracking</strong></td>
-              <td><span class="px-badge px-badge-green">否 · No</span></td>
-              <td><code>NSPrivacyTracking = false</code>。无广告、无第三方分析或行为追踪 SDK。</td>
+              <td><strong data-t="priv.r1.c">Cross-App Tracking</strong></td>
+              <td><span class="px-badge px-badge-green" data-t="priv.no">No</span></td>
+              <td data-t-html="priv.r1.d"><code>NSPrivacyTracking = false</code>. No advertising, analytics, or behavioral tracking SDKs.</td>
             </tr>
             <tr>
-              <td><strong>账号注册 / Account Required</strong></td>
-              <td><span class="px-badge px-badge-green">否 · No</span></td>
-              <td>无需注册或登录，我们不运营用户账号数据库。</td>
+              <td><strong data-t="priv.r2.c">Account Required</strong></td>
+              <td><span class="px-badge px-badge-green" data-t="priv.no">No</span></td>
+              <td data-t="priv.r2.d">No account registration or sign-in; we do not operate a user account database.</td>
             </tr>
             <tr>
-              <td><strong>与身份关联的数据 / Data Linked to You</strong></td>
-              <td><span class="px-badge px-badge-green">无 · None</span></td>
-              <td>我们不收集姓名、邮箱、设备标识符或与您身份关联的任何数据。</td>
+              <td><strong data-t="priv.r3.c">Data Linked to You</strong></td>
+              <td><span class="px-badge px-badge-green" data-t="priv.none">None</span></td>
+              <td data-t="priv.r3.d">We do not collect names, email addresses, device identifiers, or any identity-linked data.</td>
             </tr>
             <tr>
-              <td><strong>非关联数据 / Data Not Linked to You</strong></td>
-              <td><span class="px-badge px-badge-water">粗略位置 · Coarse Location</span></td>
-              <td>仅用于打开选址地图时的初始视野居中（App Functionality），非关联、非追踪、不存储。</td>
+              <td><strong data-t="priv.r4.c">Data Not Linked to You</strong></td>
+              <td><span class="px-badge px-badge-water" data-t="priv.r4.s">Coarse Location</span></td>
+              <td data-t="priv.r4.d">Used solely to center the initial map view (App Functionality); unlinked, non-tracking, never stored.</td>
             </tr>
             <tr>
-              <td><strong>作品与存档存储 / Creations Storage</strong></td>
-              <td><span class="px-badge px-badge-green">纯本地 · On-Device Only</span></td>
-              <td>您生成的 3D 世界、截图、4K 航拍视频与缓存全部保存在您的设备本地。</td>
+              <td><strong data-t="priv.r5.c">Creations Storage</strong></td>
+              <td><span class="px-badge px-badge-green" data-t="priv.r5.s">On-Device Only</span></td>
+              <td data-t="priv.r5.d">All generated 3D worlds, screenshots, 4K aerial videos, and caches remain locally on your device.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Simplified Chinese Full Text (Always in DOM, no JS required) -->
-    <article class="px-panel doc-section" id="zh" lang="zh-Hans">
-      <h2>中文版 · 方舆（Fangyu）隐私政策</h2>
-      <p><strong>最后更新日期：</strong>2026 年 11 月</p>
-      <p>方舆（Bundle ID：<code>com.entropysniper.fangyu</code>）是一款运行在 macOS、iOS、iPadOS 与 visionOS 上的本地地理体素世界创作工具。我们高度重视您的隐私，并遵循最小化数据原则。</p>
+    <!-- Full Policy -->
+    <article class="px-panel doc-section">
+      <h2 data-t="priv.pol.h2">Privacy Policy Details</h2>
+      <p data-t-html="priv.pol.intro">Fangyu (Bundle ID: <code>com.entropysniper.fangyu</code>) is a local-first geographic voxel world creation application for macOS, iOS, iPadOS, and visionOS. We respect your privacy and collect only the absolute minimum data required for core app functionality.</p>
 
-      <h3>1. 我们收集与处理哪些信息</h3>
+      <h3 data-t="priv.s1.h">1. Information We Collect &amp; Process</h3>
       <ul class="doc-list">
-        <li><strong>不追踪、不建号、不上传您的存档：</strong>方舆不要求注册账号，不集成任何第三方广告或行为追踪 SDK，不开启遥测上报。您生成的 3D 世界、地图补绘、截图与 4K 视频均保存在您的设备本地，绝不上传至我们的服务器。</li>
-        <li><strong>粗略位置（仅用于地图初始居中）：</strong>首次打开选址地图时，应用可能会向第三方 IP 地理定位接口（如 <code>ipwho.is</code> 或 <code>get.geojs.io</code>）发起一次非关联请求以获取大致城市坐标，用于定位地图初始视野。该信息不会与您的身份关联，不用于追踪，也不会被我们存储。</li>
-        <li><strong>公开地图与地理数据请求：</strong>当您搜索地点、查看底图或生成世界时，应用会直接向公开的第三方地理数据源请求所选经纬度范围的矢量、影像与高程数据，包括 OpenStreetMap（Nominatim / Overpass / 静态瓦片档）、Overture Maps、OpenFreeMap、Mapterhorn / AWS Terrain、EOX Sentinel-2 cloudless、NASA PDS / USGS 行星数据，以及（仅当您主动开启时）公开航拍激光点云（LiDAR）服务。您可在设置中关闭「自动命名地点」以减少在线地理编码请求。</li>
-        <li><strong>应用内购买（StoreKit 2）：</strong>方舆 Pro 订阅与一次性买断完全由 Apple App Store（StoreKit 2）处理与验证，我们无法访问、接收或存储您的支付卡信息或 Apple ID 账单细节。</li>
+        <li data-t-html="priv.s1.1"><strong>No tracking, no accounts, local-first creations:</strong> Fangyu requires no account registration, integrates no third-party advertising, analytics, or tracking SDKs, and sends no telemetry. All generated 3D worlds, custom map patches, screenshots, and 4K videos are stored exclusively on your local device and are never uploaded to us.</li>
+        <li data-t-html="priv.s1.2"><strong>Coarse location (optional initial map centering):</strong> When opening the map picker, the app may make an unlinked request to a public IP geolocation endpoint (<code>ipwho.is</code> or <code>get.geojs.io</code>) solely to center the initial map view near your approximate city. This coarse location is never linked to your identity, never used for tracking, and never stored by us.</li>
+        <li data-t-html="priv.s1.3"><strong>Public geographic &amp; elevation queries:</strong> When you search for a place, browse the map, or generate a world, the app requests public map, imagery, and elevation data for your selected coordinates directly from third-party public services: OpenStreetMap (Nominatim / Overpass / static tiles), Overture Maps, OpenFreeMap, Mapterhorn / AWS Terrain, EOX Sentinel-2 cloudless, NASA PDS / USGS planetary basemaps, and (only when explicitly enabled) public airborne LiDAR datasets. You may disable "Auto-Name Selections Online" in Settings to avoid reverse-geocoding queries.</li>
+        <li data-t-html="priv.s1.4"><strong>In-App Purchases (StoreKit 2):</strong> Fangyu Pro subscriptions and Lifetime purchases are processed and verified exclusively by Apple via StoreKit 2. We never receive, view, or store your payment details or Apple Account billing records.</li>
       </ul>
 
-      <h3>2. 本地文件与系统权限</h3>
+      <h3 data-t="priv.s2.h">2. Local File Access &amp; Sandboxing</h3>
       <ul class="doc-list">
-        <li><strong>macOS App Sandbox 安全范围书签：</strong>在 macOS 上，方舆严格运行在 Apple App Sandbox 沙盒容器内。仅当您通过系统文件选择器主动授权目录（例如 Minecraft 存档目录 <code>saves</code> 或自定义导出位置）时，应用才会读写您选择的位置，并通过 Apple 安全范围书签（Security-Scoped Bookmark）保持授权；您随时可在应用「设置 › 导出与游戏目录」中清除该授权。</li>
-        <li><strong>iOS / iPadOS 与 visionOS 文件分享：</strong>导出的世界文件保存在应用本地容器内，仅在您主动点击「在 Minecraft 中打开」或系统分享面板时移交至目标应用或「文件」中。</li>
+        <li data-t-html="priv.s2.1"><strong>macOS App Sandbox &amp; Security-Scoped Bookmarks:</strong> On macOS, Fangyu operates strictly inside the Apple App Sandbox. It accesses directories outside its container (such as your Minecraft <code>saves</code> folder or an export directory) only when you explicitly grant permission via the system file picker, persisted via Apple Security-Scoped Bookmarks. You may revoke this authorization anytime under <em>Settings › Export &amp; Game Folders</em>.</li>
+        <li data-t-html="priv.s2.2"><strong>iOS, iPadOS &amp; visionOS:</strong> Exported files remain in the app's sandbox until you explicitly share them or hand them off via "Open in Minecraft" or the system Share Sheet.</li>
       </ul>
 
-      <h3>3. 第三方服务与数据保留</h3>
-      <p>我们不运营收集用户个人数据的后端服务器。所有地图瓦片缓存、世界库和偏好设置仅存于您的设备本地，您可随时在「设置 › 存储与运行环境」中清理缓存，或卸载应用彻底删除全部本地数据。</p>
+      <h3 data-t="priv.s3.h">3. Data Retention &amp; Local Control</h3>
+      <p data-t-html="priv.s3.p">We operate no backend database storing personal user data. Downloaded map/elevation caches, generated worlds, and preferences reside solely on your device. You can clear caches anytime under <em>Settings › Storage &amp; Runtime</em> or remove all local data by deleting the app.</p>
 
-      <h3>4. 儿童隐私</h3>
-      <p>方舆不向任何年龄段用户收集个人身份信息或账号数据，亦不包含社交、聊天或第三方广告内容。</p>
+      <h3 data-t="priv.s4.h">4. Children's Privacy</h3>
+      <p data-t="priv.s4.p">Fangyu collects no personally identifiable information from users of any age and contains no social chat, user-generated feeds, or third-party advertising.</p>
 
-      <h3>5. 政策更新与联系我们</h3>
-      <p>如本隐私政策有重大变更，我们将在本页面更新日期与条款内容。如对本隐私政策有任何疑问，请发送邮件至：<a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a>。</p>
-    </article>
-
-    <!-- English Full Text (Always in DOM, no JS required) -->
-    <article class="px-panel doc-section" id="en" lang="en">
-      <h2>English · Fangyu Privacy Policy</h2>
-      <p><strong>Last Updated:</strong> November 2026</p>
-      <p>Fangyu (Bundle ID: <code>com.entropysniper.fangyu</code>) is a local-first geographic voxel world creation application for macOS, iOS, iPadOS, and visionOS. We respect your privacy and collect only the absolute minimum data required for core app functionality.</p>
-
-      <h3>1. Information We Collect &amp; Process</h3>
-      <ul class="doc-list">
-        <li><strong>No tracking, no accounts, local-first creations:</strong> Fangyu requires no account registration, integrates no third-party advertising, analytics, or tracking SDKs, and sends no telemetry. All generated 3D worlds, custom map patches, screenshots, and 4K videos are stored exclusively on your local device and are never uploaded to us.</li>
-        <li><strong>Coarse location (optional initial map centering):</strong> When opening the map picker, the app may make an unlinked request to a public IP geolocation endpoint (<code>ipwho.is</code> or <code>get.geojs.io</code>) solely to center the initial map view near your approximate city. This coarse location is never linked to your identity, never used for tracking, and never stored by us.</li>
-        <li><strong>Public geographic &amp; elevation queries:</strong> When you search for a place, browse the map, or generate a world, the app requests public map, imagery, and elevation data for your selected coordinates directly from third-party public services: OpenStreetMap (Nominatim / Overpass / static tiles), Overture Maps, OpenFreeMap, Mapterhorn / AWS Terrain, EOX Sentinel-2 cloudless, NASA PDS / USGS planetary basemaps, and (only when explicitly enabled) public airborne LiDAR datasets. You may disable "Auto-Name Selections Online" in Settings to avoid reverse-geocoding queries.</li>
-        <li><strong>In-App Purchases (StoreKit 2):</strong> Fangyu Pro subscriptions and Lifetime purchases are processed and verified exclusively by Apple via StoreKit 2. We never receive, view, or store your payment details or Apple Account billing records.</li>
-      </ul>
-
-      <h3>2. Local File Access &amp; Sandboxing</h3>
-      <ul class="doc-list">
-        <li><strong>macOS App Sandbox &amp; Security-Scoped Bookmarks:</strong> On macOS, Fangyu operates strictly inside the Apple App Sandbox. It accesses directories outside its container (such as your Minecraft <code>saves</code> folder or an export directory) only when you explicitly grant permission via the system file picker, persisted via Apple Security-Scoped Bookmarks. You may revoke this authorization anytime under <em>Settings › Export &amp; Game Folders</em>.</li>
-        <li><strong>iOS, iPadOS &amp; visionOS:</strong> Exported files remain in the app's sandbox until you explicitly share them or hand them off via "Open in Minecraft" or the system Share Sheet.</li>
-      </ul>
-
-      <h3>3. Data Retention &amp; Local Control</h3>
-      <p>We operate no backend database storing personal user data. Downloaded map/elevation caches, generated worlds, and preferences reside solely on your device. You can clear caches anytime under <em>Settings › Storage &amp; Runtime</em> or remove all local data by deleting the app.</p>
-
-      <h3>4. Children's Privacy</h3>
-      <p>Fangyu collects no personally identifiable information from users of any age and contains no social chat, user-generated feeds, or third-party advertising.</p>
-
-      <h3>5. Updates &amp; Contact</h3>
-      <p>Any updates to this policy will be posted on this page with a revised date. If you have questions regarding privacy, please contact us at <a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a>.</p>
+      <h3 data-t="priv.s5.h">5. Updates &amp; Contact</h3>
+      <p data-t-html="priv.s5.p">Any updates to this policy will be posted on this page with a revised date. If you have questions regarding privacy, please contact us at <a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a>.</p>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="wrap-narrow footer-bottom">
-      <p><a href="../index.html">← 返回方舆主页 / Back to Fangyu Home</a> · <a href="../support.html">技术支持 / Support</a> · <a href="../terms.html">使用条款与署名 / Terms &amp; Credits</a></p>
-      <p>Fangyu (<code>com.entropysniper.fangyu</code>) · Independent geographic voxel studio. Not an official Minecraft product; not approved by or associated with Mojang or Microsoft.</p>
+      <p><a href="../index.html" data-t="footer.back_home">← Back to Fangyu Home</a> · <a href="../support.html" data-t="nav.support">Support</a> · <a href="../terms.html" data-t="nav.terms">Terms &amp; Credits</a></p>
+      <p data-t-html="footer.disclaimer"><strong>Disclaimer:</strong> Fangyu is an independent geographic voxel studio. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
     </div>
   </footer>
 

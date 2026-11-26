@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh-Hans" data-lang="zh">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>方舆（Fangyu）技术支持 · Support</title>
-  <meta name="description" content="方舆（Fangyu）官方技术支持页面：macOS、iPhone、iPad 与 Apple Vision Pro 使用帮助、恢复购买、订阅管理、导出指引与开发者联系方式。" />
+  <title>Fangyu Support &amp; FAQ</title>
+  <meta name="description" content="Official Fangyu support page for macOS, iPhone, iPad, and Apple Vision Pro: restore purchases, manage subscriptions, Minecraft export guides, and developer contact." />
   <meta name="theme-color" content="#15181D" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
@@ -12,26 +12,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/fangyu.css" />
+  <script src="../assets/i18n-docs.js"></script>
   <script src="../assets/site.js"></script>
 </head>
-<body>
+<body data-page="support">
 
   <header class="site-nav">
     <div class="wrap nav-inner">
       <a class="brand" href="../index.html">
-        <img class="brand-icon" src="../assets/app-icon-256.png" alt="方舆 Fangyu" width="34" height="34" />
-        <span class="brand-name">方舆</span>
-        <span class="brand-sub">Fangyu</span>
+        <img class="brand-icon" src="../assets/app-icon-256.png" alt="Fangyu" width="34" height="34" />
+        <span class="brand-name" data-t="brand.name">Fangyu</span>
+        <span class="brand-sub">v1.0</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="../index.html"><span data-i18n="zh">产品主页</span><span data-i18n="en">Home</span></a>
-        <a href="../support.html" class="is-active"><span data-i18n="zh">技术支持</span><span data-i18n="en">Support</span></a>
-        <a href="../privacy.html"><span data-i18n="zh">隐私政策</span><span data-i18n="en">Privacy</span></a>
-        <a href="../terms.html"><span data-i18n="zh">使用条款与署名</span><span data-i18n="en">Terms</span></a>
+        <a href="../index.html" data-t="nav.home">Home</a>
+        <a href="../support.html" class="is-active" data-t="nav.support">Support</a>
+        <a href="../privacy.html" data-t="nav.privacy">Privacy</a>
+        <a href="../terms.html" data-t="nav.terms">Terms &amp; Credits</a>
       </nav>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" data-set-lang="zh" class="is-on" aria-pressed="true">中文</button>
-        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-select-wrap">
+        <select class="lang-select" data-lang-select aria-label="Language">
+          <option value="en" selected>English</option>
+          <option value="zh">简体中文</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
       </div>
     </div>
   </header>
@@ -39,150 +47,111 @@
   <section class="doc-hero">
     <div class="wrap-narrow">
       <span class="px-badge px-badge-water">APP SUPPORT · HELP CENTER</span>
-      <h1>方舆（Fangyu）技术支持 · Support</h1>
+      <h1 data-t="sup.h1">Fangyu Support &amp; Help Center</h1>
       <div class="doc-meta">
         <span class="px-badge">Bundle ID: com.entropysniper.fangyu</span>
         <span class="px-badge">Email: entropysniper@gmail.com</span>
       </div>
       <div class="doc-jump">
-        <a class="px-btn px-btn-primary px-btn-sm" href="mailto:entropysniper@gmail.com?subject=Fangyu%20Support">邮件联系支持 / Email Support</a>
-        <a class="px-btn px-btn-stone px-btn-sm" href="#faq-zh">中文常见问题</a>
-        <a class="px-btn px-btn-water px-btn-sm" href="#faq-en">English FAQ</a>
+        <a class="px-btn px-btn-primary px-btn-sm" href="mailto:entropysniper@gmail.com?subject=Fangyu%20Support" data-t="sup.cta_mail">Email Support</a>
+        <a class="px-btn px-btn-stone px-btn-sm" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener" data-t="footer.manage_sub">Manage Subscriptions</a>
+        <a class="px-btn px-btn-water px-btn-sm" href="#faq" data-t="sup.cta_faq">Jump to FAQ</a>
       </div>
     </div>
   </section>
 
   <main class="wrap-narrow doc-body">
-    <!-- Direct Contact & System Requirements -->
+    <!-- Direct Contact -->
     <section class="px-panel-gold doc-section">
-      <h2>联系开发者 · Contact Developer</h2>
-      <p>感谢使用方舆！无论您在使用 macOS、iPhone、iPad 还是 Apple Vision Pro 版本时遇到任何问题、购买疑问或功能建议，请直接邮件联系我们：</p>
-      <p>Thank you for using Fangyu! For bug reports, purchase inquiries, or feedback on macOS, iPhone, iPad, or Apple Vision Pro, please email us directly:</p>
+      <h2 data-t="sup.contact.h2">Contact Developer</h2>
+      <p data-t="sup.contact.p1">Thank you for using Fangyu! For bug reports, purchase inquiries, or feedback on macOS, iPhone, iPad, or Apple Vision Pro, please email us directly:</p>
       <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
         <a class="px-btn px-btn-gold" href="mailto:entropysniper@gmail.com?subject=Fangyu%20Support">entropysniper@gmail.com</a>
-        <a class="px-btn px-btn-stone" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">管理 App Store 订阅 / Manage Subscriptions</a>
+        <a class="px-btn px-btn-stone" href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener" data-t="footer.manage_sub">Manage Subscriptions</a>
       </div>
-      <p style="font-size: 13.5px;">反馈问题时建议附上：设备型号、系统版本、方舆版本号以及简要复现步骤（如涉及生成任务，可在应用内「设置 › 存储与运行环境 › 任务日志」查看日志）。/ When reporting an issue, please include your device model, OS version, Fangyu version, and steps to reproduce.</p>
+      <p style="font-size: 13.5px;" data-t="sup.contact.tip">When reporting an issue, please include your device model, OS version, Fangyu version, and steps to reproduce (for generation tasks, you can also view logs under Settings › Storage &amp; Runtime › Job Logs).</p>
     </section>
 
+    <!-- Platform Requirements -->
     <section class="px-panel doc-section">
-      <h2>平台与系统要求 · Platform Requirements</h2>
+      <h2 data-t="sup.plat.h2">Platform Requirements</h2>
       <div class="data-table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>平台 / Platform</th>
-              <th>最低系统要求 / Minimum OS</th>
-              <th>支持特性 / Capabilities</th>
+              <th data-t="sup.tbl.p">Platform</th>
+              <th data-t="sup.tbl.os">Minimum OS</th>
+              <th data-t="sup.tbl.cap">Capabilities</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>macOS</strong></td>
               <td>macOS 13.0+ (Apple Silicon)</td>
-              <td>完整选区生成、Metal/MetalFX 实时 3D、4K 光追工作台、8 种导出格式、沙盒安全书签</td>
+              <td data-t="sup.tbl.mac">Full area generation, Metal/MetalFX live 3D, 4K ray-traced CineStudio, 8 export formats, sandbox bookmarks</td>
             </tr>
             <tr>
               <td><strong>iOS / iPadOS</strong></td>
               <td>iOS / iPadOS 16.0+</td>
-              <td>自适应触控与 iPad 分屏、本地生成与 3D 漫游、手柄与外接键盘、一键打开 <code>.mcworld</code></td>
+              <td data-t-html="sup.tbl.ios">Adaptive touch UI &amp; iPad Split View, on-device generation &amp; 3D roaming, gamepad/keyboard, one-tap <code>.mcworld</code></td>
             </tr>
             <tr>
               <td><strong>visionOS</strong></td>
               <td>visionOS 2.0+ (Apple Vision Pro)</td>
-              <td>RealityKit 桌面立体微缩沙盘 + CompositorServices 1:1 全沉浸式双目立体漫游</td>
+              <td data-t="sup.tbl.vis">RealityKit tabletop volumetric diorama + CompositorServices 1:1 full stereo Immersive Space</td>
             </tr>
             <tr>
-              <td><strong>语言 / Languages</strong></td>
-              <td colspan="2">简体中文 (zh-Hans) · English (en) · 日本語 (ja) · 繁體中文 (zh-Hant)</td>
+              <td><strong data-t="sup.tbl.lang_k">App Languages</strong></td>
+              <td colspan="2">English (en) · 简体中文 (zh-Hans) · 日本語 (ja) · 繁體中文 (zh-Hant)</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Chinese FAQ -->
-    <article class="px-panel doc-section" id="faq-zh" lang="zh-Hans">
-      <h2>中文常见问题（FAQ）</h2>
+    <!-- FAQ -->
+    <article class="px-panel doc-section" id="faq">
+      <h2 data-t="sup.faq.h2">Frequently Asked Questions</h2>
 
       <div class="faq-item">
-        <h3>1. 如何恢复购买与跨 Apple 设备同步方舆 Pro？</h3>
-        <p>方舆 Pro 支持 <strong>Apple Universal Purchase（通用购买）</strong>与<strong>家人共享</strong>。在登录同一 Apple 账户（或同一家庭共享组）的 Mac、iPhone、iPad 或 Apple Vision Pro 上，打开应用进入「方舆 Pro」或「设置 › 方舆 Pro」，点击<strong>「恢复购买」</strong>即可立即同步权益。</p>
+        <h3 data-t="sup.q1.t">1. How do I restore purchases across Mac, iPhone, iPad, and Apple Vision Pro?</h3>
+        <p data-t-html="sup.q1.p">Fangyu Pro supports <strong>Apple Universal Purchase</strong> and <strong>Family Sharing</strong>. On any device signed into the same Apple Account (or Family Sharing group), open <em>Fangyu Pro</em> (or <em>Settings › Fangyu Pro</em>) and tap <strong>Restore Purchases</strong> to sync your unlock immediately.</p>
       </div>
 
       <div class="faq-item">
-        <h3>2. 如何管理、更换或取消自动续期订阅？</h3>
-        <p>所有订阅均由 Apple App Store 管理。您可随时在应用内点击「管理订阅」，或直接访问 <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store 账户订阅设置</a> 查看续订日期、切换方案或关闭自动续期（需在当前周期结束前至少 24 小时取消）。如果您已购买「买断」方案且之前仍有按月/按年订阅，请记得前往订阅设置取消旧订阅以避免重复扣费。</p>
+        <h3 data-t="sup.q2.t">2. How do I manage, switch, or cancel a subscription?</h3>
+        <p data-t-html="sup.q2.p">Subscriptions are managed directly by Apple. Tap <em>Manage Subscriptions</em> inside Fangyu or visit <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store Subscription Settings</a> at least 24 hours before the renewal date. If you purchase Lifetime while holding an active Monthly or Yearly subscription, please cancel the renewing subscription in App Store settings to avoid duplicate billing.</p>
       </div>
 
       <div class="faq-item">
-        <h3>3. 免费版与方舆 Pro 有什么区别？为什么超过 1 km² 提示升级？</h3>
-        <p>免费版支持无限次生成 <strong>1 km² 以内的地球选区</strong>，并完整包含 1:1 地标精雕、原生 Metal 实时 3D 漫游与 Minecraft: Java 版无损导出。当选区超过 1 km²、切换到月球/火星、开启风格滤镜/卫星取色/局部补绘/跨区域拼接、使用 4K 光追导出或导出 <code>.mrpack</code> / <code>.mcworld</code> / <code>.schem</code> / <code>.stl</code> / <code>.obj</code> 时，需要方舆 Pro。您可以点击一键缩小选区至 1 km² 继续免费生成。</p>
+        <h3 data-t="sup.q3.t">3. What is included for free vs. Fangyu Pro?</h3>
+        <p data-t-html="sup.q3.p">Fangyu Free lets you generate Earth areas up to <strong>1 km²</strong> with 1:1 landmark sculpting, full native Metal 3D roaming, and lossless Minecraft: Java Edition export forever. Fangyu Pro unlocks areas larger than 1 km², Moon &amp; Mars planetary worlds, the 4K Ray-Traced Aerial Studio, Style Filters, Satellite Color Sampling, Local Map Patching, Multi-Region Stitching, and all multi-format exports (<code>.mrpack</code>, Creator Kit, Bedrock <code>.mcworld</code>, <code>.schem</code>, <code>.stl</code>, <code>.obj</code>).</p>
       </div>
 
       <div class="faq-item">
-        <h3>4. 如何在 Minecraft 中打开导出的世界？</h3>
+        <h3 data-t="sup.q4.t">4. How do I open exported worlds in Minecraft?</h3>
         <ul class="doc-list">
-          <li><strong>Java 版（1.21.4+）：</strong>在 Mac 上导出时选择「一键放入 Minecraft 存档目录」，首次通过系统面板授权 <code>~/Library/Application Support/minecraft/saves</code> 即可永久记住；随后打开 Minecraft 启动器进入「单人游戏」。若提示「实验性设置（超高数据包）」，点击「继续」即可。</li>
-          <li><strong>光影远景整合包（.mrpack）：</strong>将 <code>.mrpack</code> 拖入 Modrinth App、Prism Launcher、HMCL 或 PCL2，启动器会自动下载 Sodium、Iris、Distant Horizons 与对应光影包。</li>
-          <li><strong>基岩版（.mcworld）：</strong>在 iPhone / iPad 上直接点击「在 Minecraft 中打开」；在 Mac 上点击「隔空投送至 iPad / iPhone…」，接收后选择用 Minecraft 打开即可自动导入。</li>
+          <li data-t-html="sup.q4.1"><strong>Java Edition (1.21.4+):</strong> On macOS, select <em>Import to Minecraft Saves Folder</em> and grant access to <code>~/Library/Application Support/minecraft/saves</code> once. Launch Minecraft → Singleplayer. If prompted about Experimental Settings (extended-height datapack), click <em>Proceed</em>.</li>
+          <li data-t-html="sup.q4.2"><strong>Shader &amp; LOD Modpack (.mrpack):</strong> Drag the <code>.mrpack</code> file into Modrinth App, Prism Launcher, HMCL, or PCL2; the launcher automatically fetches Sodium, Iris, Distant Horizons, and your chosen shader pack.</li>
+          <li data-t-html="sup.q4.3"><strong>Bedrock Edition (.mcworld):</strong> On iPhone/iPad, tap <em>Open in Minecraft</em>. On macOS, choose <em>AirDrop to iPad / iPhone…</em> and open the received file in Minecraft.</li>
         </ul>
       </div>
 
       <div class="faq-item">
-        <h3>5. 如何更改已授权的存档目录或清理本地缓存？</h3>
-        <p>打开「设置 › 导出与游戏目录」可随时更改或清除已授权的 <code>saves</code> 文件夹书签；打开「设置 › 存储与运行环境」可查看方舆世界库体积、一键在访达中定位世界库，或清理已下载的地图/高程/卫星缓存，并运行内置引擎与沙盒自检。</p>
+        <h3 data-t="sup.q5.t">5. How do I reset folder permissions or clear downloaded map caches?</h3>
+        <p data-t-html="sup.q5.p">Go to <em>Settings › Export &amp; Game Folders</em> to change or clear the Security-Scoped Bookmark on macOS. Go to <em>Settings › Storage &amp; Runtime</em> to inspect your world library size, clear cached elevation/satellite tiles, or run built-in engine diagnostics.</p>
       </div>
 
       <div class="faq-item">
-        <h3>6. 免责声明</h3>
-        <p>方舆为独立开发的地理体素创作工具，非 Minecraft 官方产品，未获 Mojang 或 Microsoft 认可或关联。</p>
-      </div>
-    </article>
-
-    <!-- English FAQ -->
-    <article class="px-panel doc-section" id="faq-en" lang="en">
-      <h2>English Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>1. How do I restore purchases across Mac, iPhone, iPad, and Apple Vision Pro?</h3>
-        <p>Fangyu Pro supports <strong>Apple Universal Purchase</strong> and <strong>Family Sharing</strong>. On any device signed into the same Apple Account (or Family Sharing group), open <em>Fangyu Pro</em> (or <em>Settings › Fangyu Pro</em>) and tap <strong>Restore Purchases</strong> to sync your unlock immediately.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>2. How do I manage, switch, or cancel a subscription?</h3>
-        <p>Subscriptions are managed directly by Apple. Tap <em>Manage Subscriptions</em> inside Fangyu or visit <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store Subscription Settings</a> at least 24 hours before the renewal date. If you purchase Lifetime while holding an active Monthly or Yearly subscription, please cancel the renewing subscription in App Store settings to avoid duplicate billing.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>3. What is included for free vs. Fangyu Pro?</h3>
-        <p>Fangyu Free lets you generate Earth areas up to <strong>1 km²</strong> with 1:1 landmark sculpting, full native Metal 3D roaming, and lossless Minecraft: Java Edition export forever. Fangyu Pro unlocks areas larger than 1 km², Moon &amp; Mars planetary worlds, the 4K Ray-Traced Aerial Studio, Style Filters, Satellite Color Sampling, Local Map Patching, Multi-Region Stitching, and all multi-format exports (<code>.mrpack</code>, Creator Kit, Bedrock <code>.mcworld</code>, <code>.schem</code>, <code>.stl</code>, <code>.obj</code>).</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>4. How do I open exported worlds in Minecraft?</h3>
-        <ul class="doc-list">
-          <li><strong>Java Edition (1.21.4+):</strong> On macOS, select <em>Import to Minecraft Saves Folder</em> and grant access to <code>~/Library/Application Support/minecraft/saves</code> once. Launch Minecraft → Singleplayer. If prompted about Experimental Settings (extended-height datapack), click <em>Proceed</em>.</li>
-          <li><strong>Shader &amp; LOD Modpack (.mrpack):</strong> Drag the <code>.mrpack</code> file into Modrinth App, Prism Launcher, HMCL, or PCL2; the launcher automatically fetches Sodium, Iris, Distant Horizons, and your chosen shader pack.</li>
-          <li><strong>Bedrock Edition (.mcworld):</strong> On iPhone/iPad, tap <em>Open in Minecraft</em>. On macOS, choose <em>AirDrop to iPad / iPhone…</em> and open the received file in Minecraft.</li>
-        </ul>
-      </div>
-
-      <div class="faq-item">
-        <h3>5. How do I reset folder permissions or clear downloaded map caches?</h3>
-        <p>Go to <em>Settings › Export &amp; Game Folders</em> to change or clear the Security-Scoped Bookmark on macOS. Go to <em>Settings › Storage &amp; Runtime</em> to inspect your world library size, clear cached elevation/satellite tiles, or run built-in engine diagnostics.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>6. Disclaimer</h3>
-        <p>Fangyu is an independent geographic voxel studio. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+        <h3 data-t="sup.q6.t">6. Disclaimer</h3>
+        <p data-t="sup.q6.p">Fangyu is an independent geographic voxel studio. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
       </div>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="wrap-narrow footer-bottom">
-      <p><a href="../index.html">← 返回方舆主页 / Back to Fangyu Home</a> · <a href="../privacy.html">隐私政策 / Privacy Policy</a> · <a href="../terms.html">使用条款与署名 / Terms &amp; Credits</a></p>
+      <p><a href="../index.html" data-t="footer.back_home">← Back to Fangyu Home</a> · <a href="../privacy.html" data-t="nav.privacy">Privacy</a> · <a href="../terms.html" data-t="nav.terms">Terms &amp; Credits</a></p>
       <p>Contact: <a href="mailto:entropysniper@gmail.com">entropysniper@gmail.com</a> · Fangyu (<code>com.entropysniper.fangyu</code>)</p>
     </div>
   </footer>
