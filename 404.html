@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 · 方舆（Fangyu）</title>
+  <meta name="theme-color" content="#15181D" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background-color: #15181D;
+      background-image: linear-gradient(rgba(244,239,226,.028) 1px, transparent 1px), linear-gradient(90deg, rgba(244,239,226,.028) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: #F4EFE2;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+    }
+    .card {
+      max-width: 540px;
+      width: 100%;
+      background: #22262E;
+      border: 3px solid #0B0C0F;
+      box-shadow: inset 3px 3px 0 #2C313A, inset -3px -3px 0 #181B21, 6px 6px 0 rgba(0,0,0,.45);
+      padding: 32px 26px;
+      text-align: center;
+    }
+    .code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 52px; font-weight: 700; color: #F4D27A; line-height: 1; margin-bottom: 12px; }
+    h1 { margin: 0 0 10px; font-size: 24px; }
+    p { margin: 0 0 22px; color: #C3C8D1; font-size: 14.5px; line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 3px solid #0B0C0F;
+      font-weight: 600;
+      font-size: 14px;
+      color: #F4EFE2;
+      text-decoration: none;
+      background: #5A6170;
+      box-shadow: inset 3px 3px 0 #8B93A3, inset -3px -3px 0 #363B46, 4px 4px 0 rgba(0,0,0,.42);
+    }
+    .btn-primary {
+      background: #4A8A35;
+      box-shadow: inset 3px 3px 0 #7CC056, inset -3px -3px 0 #28501D, 4px 4px 0 rgba(0,0,0,.42);
+    }
+    .btn-water {
+      background: #3A76B5;
+      box-shadow: inset 3px 3px 0 #6FA6DF, inset -3px -3px 0 #1F4670, 4px 4px 0 rgba(0,0,0,.42);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="code">404</div>
+    <h1>这片区块尚未生成 · Chunk Not Found</h1>
+    <p>你访问的页面不存在或已移动。请返回方舆主页，或直接访问技术支持与隐私政策页面。<br />The requested page could not be found. Return to the Fangyu homepage or visit Support and Privacy.</p>
+    <div class="actions">
+      <a class="btn btn-primary" id="link-home" href="./">方舆主页 · Home</a>
+      <a class="btn" id="link-support" href="./support.html">技术支持 · Support</a>
+      <a class="btn btn-water" id="link-privacy" href="./privacy.html">隐私政策 · Privacy</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var base = location.pathname.indexOf('/fangyu-app/') === 0 ? '/fangyu-app/' : '/';
+      document.getElementById('link-home').href = base;
+      document.getElementById('link-support').href = base + 'support.html';
+      document.getElementById('link-privacy').href = base + 'privacy.html';
+    })();
+  </script>
+</body>
+</html>
