@@ -261,5 +261,44 @@
         applyLang(this.value, true);
       });
     }
+
+    // Pixel Lightbox for all real in-app screenshots
+    var zoomImgs = document.querySelectorAll('[data-zoom]');
+    if (zoomImgs.length) {
+      var lb = document.createElement('div');
+      lb.className = 'fy-lightbox';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-modal', 'true');
+      lb.innerHTML =
+        '<div class="fy-lightbox-box">' +
+          '<img class="fy-lightbox-img" alt="" />' +
+          '<div class="fy-lightbox-bar">' +
+            '<span class="fy-lightbox-cap"></span>' +
+            '<button type="button" class="fy-lightbox-close" aria-label="Close">✕ ESC</button>' +
+          '</div>' +
+        '</div>';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector('.fy-lightbox-img');
+      var lbCap = lb.querySelector('.fy-lightbox-cap');
+      var lbClose = lb.querySelector('.fy-lightbox-close');
+
+      function closeLb() { lb.classList.remove('is-open'); }
+      lbClose.addEventListener('click', closeLb);
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+
+      for (var zi = 0; zi < zoomImgs.length; zi++) {
+        (function (img) {
+          img.addEventListener('click', function () {
+            lbImg.src = img.currentSrc || img.src;
+            lbImg.alt = img.alt || '';
+            var card = img.closest('article, li, .feat-card, .plat-card, .export-hero-shot');
+            var h = card ? card.querySelector('h3') : null;
+            lbCap.textContent = (h && h.textContent) ? h.textContent : (img.alt || '');
+            lb.classList.add('is-open');
+          });
+        })(zoomImgs[zi]);
+      }
+    }
   });
 })();
